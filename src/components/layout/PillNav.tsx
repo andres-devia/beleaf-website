@@ -66,6 +66,7 @@ export function PillNav() {
                 >
                   <Link href={item.href ?? "/"} className={`${styles.pill} ${pathname === item.href ? styles.on : ""}`}>
                     <NavLabel label={item.label} active={pathname === item.href} />
+                    {pathname === item.href && <span className={styles.dot} />}
                   </Link>
                   <div className={`${styles.drop} ${dropOpen ? styles.dropShow : ""}`}>
                     <div className={styles.dropHead}>Páginas de servicio</div>
@@ -83,6 +84,7 @@ export function PillNav() {
                   className={`${styles.pill} ${pathname === item.href ? styles.on : ""}`}
                 >
                   <NavLabel label={item.label} active={pathname === item.href} />
+                  {pathname === item.href && <span className={styles.dot} />}
                 </Link>
               ),
             )}
@@ -157,7 +159,6 @@ function NavLabel({ label, active }: { label: string; active: boolean }) {
     <span className={`${styles.stack} ${active ? styles.on : ""}`} aria-hidden="true">
       <span className={styles.l1}>{label}</span>
       <span className={styles.l2}>{label}</span>
-      {active && <span className={styles.dot} />}
     </span>
   );
 }
