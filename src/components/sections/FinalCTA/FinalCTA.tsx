@@ -10,7 +10,9 @@ export function FinalCTA() {
         <Reveal as="h2" className={styles.title}>
           {FINAL_CTA.title}
         </Reveal>
-        <p className={`${styles.body} reveal`}>{FINAL_CTA.body}</p>
+        <Reveal as="p" className={styles.body}>
+          {FINAL_CTA.body}
+        </Reveal>
         <FinalCTAActions />
       </div>
     </section>

@@ -29,49 +29,54 @@
   font-size: 13.5px;
 }
 
-.primary {
+/* Selectores compuestos (.btn.primary, no solo .primary): MUI genera su
+   propia clase de una sola palabra para variant="text" (ver muiTheme.ts,
+   colorPrimary resuelve a --orange vía el theme), con la misma especificidad
+   que estas clases. Sin el .btn adicional, el orden de inserción de Emotion
+   decide el empate y el fondo/borde de esta hoja pierde silenciosamente. */
+.btn.primary {
   background: var(--orange);
   color: var(--navy);
 }
-.secondary {
+.btn.secondary {
   background: var(--navy);
   color: #fff;
 }
-.outline {
+.btn.outline {
   background: transparent;
   border: 1.5px solid var(--navy);
   color: var(--navy);
 }
-.onNavyOutline {
+.btn.onNavyOutline {
   background: transparent;
   border: 1.5px solid var(--navy-border);
   color: #fff;
 }
-.ghost {
+.btn.ghost {
   background: transparent;
   border: 0.5px solid rgba(255, 150, 64, 0.4);
   color: var(--orange);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .primary:hover {
+  .btn.primary:hover {
     background: var(--orange-light);
     transform: translateY(-2px);
     box-shadow: var(--elev-cta-glow);
   }
-  .secondary:hover {
+  .btn.secondary:hover {
     background: var(--navy-light);
     transform: translateY(-2px);
   }
-  .outline:hover {
+  .btn.outline:hover {
     background: var(--navy);
     color: #fff;
   }
-  .onNavyOutline:hover {
+  .btn.onNavyOutline:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.42);
   }
-  .ghost:hover {
+  .btn.ghost:hover {
     border-color: var(--orange);
     background: rgba(255, 150, 64, 0.06);
   }

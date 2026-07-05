@@ -15,7 +15,9 @@ export function HorizontalGallery() {
       <div className={styles.pin}>
         <div className={styles.head}>
           <div>
-            <span className="ds-eyebrow reveal">Trabajo reciente</span>
+            <Reveal as="span" className="ds-eyebrow">
+              Trabajo reciente
+            </Reveal>
             <Reveal as="h2" className="ds-h2 section-title">
               Proyectos que mueven la aguja
             </Reveal>

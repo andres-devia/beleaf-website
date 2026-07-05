@@ -12,13 +12,19 @@ export function Stack() {
       <div className={styles.inner}>
         <Row xs={1} lg={2} className={styles.head}>
           <Col>
-            <span className="ds-eyebrow reveal">{STACK_SECTION.kicker}</span>
+            <Reveal as="span" className="ds-eyebrow">
+              {STACK_SECTION.kicker}
+            </Reveal>
+          </Col>
+          <Col>
             <Reveal as="h2" className={styles.title}>
               {STACK_SECTION.title}
             </Reveal>
           </Col>
           <Col>
-            <p className={`${styles.lead} reveal`}>{STACK_SECTION.lead}</p>
+            <Reveal as="p" delay={1} className={styles.lead}>
+              {STACK_SECTION.lead}
+            </Reveal>
           </Col>
         </Row>
         <div className={`d-flex flex-wrap ${styles.cloud}`}>
