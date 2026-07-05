@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import Chip from "@mui/material/Chip";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import { useQuoteModal } from "@/hooks/useQuoteModal";
 import type { ServiceKey } from "@/types/contact";
 import styles from "./Hero.module.css";
@@ -34,16 +36,16 @@ export function HeroPills({ options }: { options: string[] }) {
         {options.map((option) => {
           const on = selected.includes(option);
           return (
-            <button
+            <Chip
               key={option}
-              type="button"
-              className={`${styles.pill} ${on ? styles.pillOn : ""}`}
+              variant="outlined"
+              clickable
               aria-pressed={on}
+              icon={on ? <Check size={15} strokeWidth={3.5} /> : undefined}
+              label={option}
+              className={`${styles.pill} ${on ? styles.pillOn : ""}`}
               onClick={() => toggle(option)}
-            >
-              {on && <Check size={15} strokeWidth={3.5} />}
-              {option}
-            </button>
+            />
           );
         })}
       </div>
@@ -54,9 +56,9 @@ export function HeroPills({ options }: { options: string[] }) {
               <span className={styles.bannerK}>Listo para cotizar</span>
               <span className={styles.bannerV}>{selected.join(" · ")}</span>
             </div>
-            <button type="button" className="btn btn-primary" onClick={() => open(serviceKeys)}>
-              Empecemos <ArrowRight size={16} />
-            </button>
+            <Button variant="primary" arrow onClick={() => open(serviceKeys)}>
+              Empecemos
+            </Button>
           </div>
         ) : null}
       </div>

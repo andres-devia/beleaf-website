@@ -22,7 +22,7 @@ const NAV_ITEMS: NavItem[] = [
   { key: "servicios", label: "Servicios", href: "/servicios", drop: true },
   { key: "nosotros", label: "Nosotros", href: "/nosotros" },
   { key: "contacto", label: "Contacto", cta: true },
-  ...NAV_PAGES.map((p) => ({ key: p.key, label: p.label, href: p.href })),
+  ...NAV_PAGES.filter((p) => p.key !== "nosotros").map((p) => ({ key: p.key, label: p.label, href: p.href })),
 ];
 
 export function PillNav() {

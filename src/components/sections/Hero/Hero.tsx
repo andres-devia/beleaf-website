@@ -1,5 +1,7 @@
 "use client";
 
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { Button } from "@/components/ui/Button";
 import { CountUp } from "@/components/ui/CountUp";
 import { useTypewriter } from "@/hooks/useTypewriter";
@@ -38,11 +40,13 @@ export function Hero() {
 
         <HeroPills options={HERO.servicePills} />
 
-        <div className={styles.stats}>
+        <Row xs={2} md={4} className={styles.stats}>
           {HERO.stats.map((s) => (
-            <CountUp key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
+            <Col key={s.label}>
+              <CountUp value={s.value} suffix={s.suffix} label={s.label} />
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
     </header>
   );

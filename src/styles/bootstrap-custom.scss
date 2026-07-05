@@ -1,0 +1,13 @@
+// Bootstrap, migrado solo como sistema de layout (grid + utilidades de espaciado/flex).
+// No se importa el Reboot, tipografía, forms ni componentes: esas capas reescriben
+// body/headings/links/inputs y chocarían con tokens.css + globals.css, que siguen
+// siendo la fuente de verdad visual del sitio.
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/utilities/api";

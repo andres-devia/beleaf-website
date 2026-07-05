@@ -6,6 +6,7 @@ import { PageWrapper } from "@/components/layout/PageWrapper";
 import { QuoteModalProvider } from "@/components/layout/QuoteModalProvider";
 import { SITE } from "@/content/site";
 import "@/styles/globals.css";
+import "@/styles/bootstrap-custom.scss";
 
 const urbanist = Urbanist({
   subsets: ["latin"],

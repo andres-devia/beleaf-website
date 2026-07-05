@@ -21,9 +21,8 @@
   color: var(--text-body);
   margin: 20px 0 32px;
 }
+/* display/justify-content/flex-wrap vienen de las utilidades de Bootstrap
+   (ver FinalCTAActions.tsx); aquí solo queda el gap de 14px. */
 .actions {
-  display: flex;
   gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
 }

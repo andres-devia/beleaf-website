@@ -6,17 +6,24 @@
   margin: 0 auto;
   padding: 0 32px;
 }
+/* Columnas migradas a Bootstrap (Row/Col en SEOSection.tsx); estas clases
+   solo aportan gutter/ratio exactos que la malla de 12 columnas no cubre. */
 .head {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
-  align-items: end;
+  align-items: flex-end;
   margin-bottom: 48px;
+  --bs-gutter-x: 48px;
+}
+.headTitleCol {
+  flex: 0 0 54.5%;
+  max-width: 54.5%;
+}
+.headLeadCol {
+  flex: 0 0 45.5%;
+  max-width: 45.5%;
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
 }
 .card {
   background: var(--white);
@@ -45,17 +52,13 @@
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media (max-width: 768px) {
   .head {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    --bs-gutter-y: 16px;
   }
-  .grid {
-    grid-template-columns: 1fr;
+  .headTitleCol,
+  .headLeadCol {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }

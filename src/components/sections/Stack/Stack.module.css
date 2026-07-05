@@ -7,12 +7,14 @@
   margin: 0 auto;
   padding: 0 32px;
 }
+/* Columnas del head migradas a Bootstrap (Row xs=1 lg=2 g-5 en Stack.tsx,
+   48px = paso g-5 del gutter scale). El cloud usa utilidades d-flex/flex-wrap
+   de Bootstrap (ver Stack.tsx); aquí solo queda el margin-top y el gap de
+   14px, que no cae en ningún paso estándar de Bootstrap. */
 .head {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: end;
+  align-items: flex-end;
   margin-bottom: 44px;
+  --bs-gutter-x: 48px;
 }
 .title {
   font-weight: 800;
@@ -29,8 +31,6 @@
   margin: 16px 0 0;
 }
 .cloud {
-  display: flex;
-  flex-wrap: wrap;
   gap: 14px;
   margin-top: 44px;
 }
@@ -88,7 +88,6 @@
 
 @media (max-width: 768px) {
   .head {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    --bs-gutter-y: 16px;
   }
 }

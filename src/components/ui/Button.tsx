@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MuiButton from "@mui/material/Button";
 import { ArrowRight } from "lucide-react";
 import type { ButtonProps } from "@/types/ui";
 import styles from "./Button.module.css";
@@ -18,19 +19,28 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
+  // variant="text" deja el fondo/borde/color en manos de Button.module.css
+  // (fiel al design system); MUI aporta el componente, focus-visible y ripple.
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <MuiButton component={Link} href={href} variant="text" disableRipple={false} className={cls}>
         {children}
         {arrow && <ArrowRight size={16} />}
-      </Link>
+      </MuiButton>
     );
   }
 
   return (
-    <button type={type} className={cls} onClick={onClick} disabled={disabled}>
+    <MuiButton
+      type={type}
+      variant="text"
+      disableRipple={false}
+      className={cls}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
       {arrow && <ArrowRight size={16} />}
-    </button>
+    </MuiButton>
   );
 }

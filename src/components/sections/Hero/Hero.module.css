@@ -93,7 +93,12 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+/* Chip de MUI como base (accesibilidad + interacción); el look exacto del
+   pill (fondo, borde, tipografía) sigue viniendo de este módulo, no de los
+   defaults de Material — por eso se neutralizan altura/padding internos de
+   MuiChip y se re-declaran aquí. */
 .pill {
+  height: auto;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -112,6 +117,17 @@
     border-color var(--dur-hover) var(--ease-out),
     box-shadow var(--dur-hover) var(--ease-out);
 }
+.pill :global(.MuiChip-label) {
+  padding: 0;
+  overflow: visible;
+}
+.pill :global(.MuiChip-icon) {
+  margin: 0;
+  color: inherit;
+}
+.pill:global(.MuiChip-clickable):hover {
+  background-color: transparent;
+}
 @media (hover: hover) and (pointer: fine) {
   .pill:hover {
     border-color: rgba(255, 255, 255, 0.42);
@@ -123,6 +139,9 @@
   background: #fff;
   border-color: #fff;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+.pillOn:global(.MuiChip-clickable):hover {
+  background-color: #fff;
 }
 
 .banner {
@@ -187,10 +206,12 @@
   color: #fff;
 }
 
+/* Grid en sí migrado a Bootstrap (Row xs={2} md={4} en Hero.tsx); esta clase
+   solo aporta el gutter exacto de tokens.json vía las CSS vars de Bootstrap
+   y el borde/espaciado superior que Bootstrap no modela. */
 .stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
   margin-top: 56px;
   border-top: 1px solid var(--navy-border);
   padding-top: 32px;
@@ -198,7 +219,6 @@
 
 @media (max-width: 768px) {
   .stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 24px;
+    --bs-gutter-y: 28px;
   }
 }

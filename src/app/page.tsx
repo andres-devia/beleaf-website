@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HomeMuiProvider } from "@/components/layout/HomeMuiProvider";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { Statement } from "@/components/sections/Statement";
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <HomeMuiProvider>
       <Hero />
       <Marquee />
       <Statement />
@@ -32,6 +33,6 @@ export default function HomePage() {
       <Stack />
       <Process />
       <FinalCTA />
-    </>
+    </HomeMuiProvider>
   );
 }

@@ -6,17 +6,16 @@
   margin: 0 auto;
   padding: 0 32px;
 }
+/* Columnas migradas a Bootstrap (Row xs=1 md=2 lg=5 g-0 en Process.tsx);
+   esta clase solo aporta el borde superior tipo tabla. */
 .row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
   border-top: 1px solid var(--border);
 }
 .step {
   padding: 32px 22px 0;
   border-right: 1px solid var(--border);
 }
-.step:last-child {
+.stepCol:last-child .step {
   border-right: none;
 }
 .n {
@@ -40,16 +39,8 @@
 }
 
 @media (max-width: 1024px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .step {
     border-bottom: 1px solid var(--border);
     padding-bottom: 28px;
-  }
-}
-@media (max-width: 768px) {
-  .row {
-    grid-template-columns: 1fr;
   }
 }

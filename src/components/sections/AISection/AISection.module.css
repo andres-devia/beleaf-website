@@ -3,16 +3,23 @@
   color: #fff;
   overflow: hidden;
 }
+/* Columnas migradas a Bootstrap (Row xs=1 lg=2 en AISection.tsx); esta clase
+   solo fija contenedor + gutter exacto de tokens.json. */
 .inner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
   align-items: center;
   position: relative;
   z-index: 2;
+  --bs-gutter-x: 64px;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    --bs-gutter-x: 40px;
+    --bs-gutter-y: 40px;
+  }
 }
 .title {
   font-weight: 800;

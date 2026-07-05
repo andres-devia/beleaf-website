@@ -1,20 +1,27 @@
 .statement {
   background: var(--off-white);
 }
+/* Grid en sí migrado a Bootstrap (Row/Col en Statement.tsx); esta clase solo
+   fija el contenedor (max-width/padding de tokens.json) y el gutter exacto
+   vía las CSS vars de Bootstrap, ya que el ratio 0.6fr/1.4fr no cae en la
+   malla de 12 columnas. */
 .inner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
-  gap: 24px 64px;
-  align-items: start;
+  --bs-gutter-x: 64px;
+  --bs-gutter-y: 24px;
+  align-items: flex-start;
 }
-.eyebrow {
-  grid-row: 1;
+.eyebrowCol {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+.textCol {
+  flex: 0 0 70%;
+  max-width: 70%;
 }
 .title {
-  grid-column: 2;
   font-weight: 800;
   font-size: clamp(26px, 3.4vw, 40px);
   line-height: 1.12;
@@ -23,7 +30,6 @@
   margin: 0;
 }
 .body {
-  grid-column: 2;
   font-size: 17px;
   line-height: 1.7;
   color: var(--text-body);
@@ -32,11 +38,9 @@
 }
 
 @media (max-width: 1024px) {
-  .inner {
-    grid-template-columns: 1fr;
-  }
-  .title,
-  .body {
-    grid-column: 1;
+  .eyebrowCol,
+  .textCol {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
