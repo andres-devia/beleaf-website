@@ -2,7 +2,6 @@
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Button } from "@/components/ui/Button";
 import { CountUp } from "@/components/ui/CountUp";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { HERO } from "@/content/home";
@@ -28,15 +27,6 @@ export function Hero() {
         </h1>
 
         <p className={styles.sub}>{HERO.sub}</p>
-
-        <div className={styles.actions}>
-          <Button variant="primary" size="lg" href="/contacto" arrow>
-            Cotiza tu proyecto
-          </Button>
-          <Button variant="onNavyOutline" size="lg" href="/servicios">
-            Ver servicios
-          </Button>
-        </div>
 
         <HeroPills options={HERO.servicePills} />
 
