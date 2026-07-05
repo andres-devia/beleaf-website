@@ -12,13 +12,18 @@
   border-top: 1px solid var(--border);
   border-left: 1px solid var(--border);
 }
+.revealCard {
+  height: 100%;
+}
 .card {
   padding: 36px 32px 40px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--white);
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: background var(--dur-hover) ease;
   position: relative;
 }
@@ -77,6 +82,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-top: auto;
 }
 .arrow {
   color: var(--orange);

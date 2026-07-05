@@ -96,8 +96,11 @@
 /* Chip de MUI como base (accesibilidad + interacción); el look exacto del
    pill (fondo, borde, tipografía) sigue viniendo de este módulo, no de los
    defaults de Material — por eso se neutralizan altura/padding internos de
-   MuiChip y se re-declaran aquí. */
-.pill {
+   MuiChip y se re-declaran aquí. El selector se ancla a `.pills` (en vez de
+   `.pill` solo) para ganarle en especificidad a las clases que emite
+   Emotion/MUI (color del root, overflow del label): sin ese empate a favor,
+   el texto queda invisible o se corta según el orden de inserción en <head>. */
+.pills .pill {
   height: auto;
   display: inline-flex;
   align-items: center;
@@ -117,31 +120,42 @@
     border-color var(--dur-hover) var(--ease-out),
     box-shadow var(--dur-hover) var(--ease-out);
 }
-.pill :global(.MuiChip-label) {
+.pills .pill :global(.MuiChip-label) {
   padding: 0;
   overflow: visible;
+  white-space: nowrap;
+  text-overflow: clip;
+  color: inherit;
 }
-.pill :global(.MuiChip-icon) {
+.pills .pill :global(.MuiChip-icon) {
   margin: 0;
   color: inherit;
 }
-.pill:global(.MuiChip-clickable):hover {
+.pills .pill:global(.MuiChip-clickable):hover {
   background-color: transparent;
 }
 @media (hover: hover) and (pointer: fine) {
-  .pill:hover {
+  .pills .pill:hover {
     border-color: rgba(255, 255, 255, 0.42);
     color: #fff;
   }
 }
-.pillOn {
+.pills .pillOn {
   color: var(--navy);
   background: #fff;
   border-color: #fff;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
-.pillOn:global(.MuiChip-clickable):hover {
+.pills .pillOn :global(.MuiChip-icon) {
+  color: var(--orange);
+}
+.pills .pillOn:global(.MuiChip-clickable):hover {
   background-color: #fff;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pills .pillOn:hover {
+    color: var(--navy);
+  }
 }
 
 .banner {

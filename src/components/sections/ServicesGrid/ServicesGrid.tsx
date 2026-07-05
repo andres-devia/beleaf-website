@@ -20,7 +20,7 @@ export function ServicesGrid() {
             const ServiceIcon = ICON_MAP[service.icon];
             return (
               <Col key={service.title}>
-                <Reveal delay={((i % 3) + 1) as 1 | 2 | 3}>
+                <Reveal delay={((i % 3) + 1) as 1 | 2 | 3} className={styles.revealCard}>
                   <Link href={service.slug} className={styles.card}>
                     <span className={styles.icon}>
                       <ServiceIcon size={23} strokeWidth={2} />
