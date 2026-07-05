@@ -1,0 +1,94 @@
+.stack {
+  background: var(--navy);
+  color: #fff;
+}
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+.title {
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 36px);
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 14px 0 0;
+}
+.lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--on-navy-body);
+  max-width: 52ch;
+  margin: 16px 0 0;
+}
+.cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 44px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-pill);
+  padding: 14px 22px 14px 16px;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.3s ease;
+  will-change: transform;
+}
+.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: rgba(245, 247, 250, 0.06);
+  border: 1px solid var(--navy-border);
+  color: rgba(245, 247, 250, 0.55);
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+.name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: rgba(245, 247, 250, 0.62);
+  transition: color 0.25s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover {
+    border-color: var(--orange);
+    background: #1b3450;
+    box-shadow: 0 14px 34px rgba(14, 32, 53, 0.4);
+  }
+  .chip:hover .mark {
+    color: var(--navy);
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+  .chip:hover .name {
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

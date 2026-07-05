@@ -1,0 +1,19 @@
+.marquee {
+  background: var(--orange);
+  overflow: hidden;
+  padding: 18px 0;
+}
+.item {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  padding: 0 28px;
+}
+.dot {
+  margin-left: 28px;
+  font-size: 9px;
+  color: rgba(14, 32, 53, 0.45);
+}

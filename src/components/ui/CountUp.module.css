@@ -1,0 +1,15 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+.value {
+  font-weight: var(--w-extrabold);
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.label {
+  font-size: 13px;
+  color: var(--on-navy-body);
+  margin-top: 6px;
+}

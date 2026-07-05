@@ -1,0 +1,131 @@
+.ai {
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+}
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.title {
+  font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 14px 0 18px;
+}
+.body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 26px;
+  max-width: 46ch;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+.listIcon {
+  color: var(--orange);
+  flex: none;
+}
+
+.terminal {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--navy-border);
+  background: rgba(0, 0, 0, 0.15);
+}
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+.barTitle {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.body2 {
+  padding: 22px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 2;
+  min-height: 240px;
+}
+.line {
+  display: flex;
+  gap: 12px;
+}
+.prompt {
+  color: var(--orange);
+}
+.promptOk {
+  color: var(--success);
+}
+.text {
+  color: rgba(255, 255, 255, 0.9);
+}
+.textMuted {
+  color: rgba(255, 255, 255, 0.45);
+}
+.textOk {
+  color: #7be0b4;
+}
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 16px;
+  background: var(--orange);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

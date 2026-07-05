@@ -1,0 +1,112 @@
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: calc(var(--nav-h) + 64px) 0 64px;
+}
+.heroInner {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.h1 {
+  font-weight: 900;
+  font-size: clamp(34px, 4.6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 16px 0 0;
+}
+.sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--on-navy-body);
+  margin: 18px 0 0;
+  max-width: 56ch;
+}
+
+.section {
+  background: var(--off-white);
+  padding: var(--section-y) 0;
+}
+.card {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: clamp(24px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.serviceChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+.serviceChip:hover {
+  border-color: var(--orange);
+}
+.serviceChipOn {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.error {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--orange-deep);
+  border-left: 2px solid var(--orange);
+  padding-left: 10px;
+  margin: 0;
+}
+.submit {
+  align-self: flex-start;
+}
+.success {
+  text-align: center;
+  padding: 40px;
+}
+.successCheck {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(31, 157, 107, 0.12);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

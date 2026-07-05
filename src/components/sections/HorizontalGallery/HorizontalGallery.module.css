@@ -1,0 +1,125 @@
+.hg {
+  background: var(--white);
+}
+.pin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: var(--section-y) 0;
+}
+.head {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+.hint {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel-300);
+  white-space: nowrap;
+}
+.viewport {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+.track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 0 max(32px, calc((100vw - var(--container)) / 2 + 32px));
+}
+.card {
+  width: clamp(340px, 34vw, 460px);
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
+  text-decoration: none;
+}
+.img {
+  height: clamp(240px, 30vh, 320px);
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--steel-300);
+  font-size: 13px;
+  font-weight: 600;
+}
+.meta {
+  padding: 20px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.navy .meta {
+  background: var(--navy);
+}
+.cat {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.client {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.015em;
+  color: var(--text-dark);
+  margin: 0;
+}
+.navy .client {
+  color: #fff;
+}
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--off-white);
+  padding: 28px;
+  width: clamp(260px, 22vw, 320px);
+  flex: none;
+}
+.moreTitle {
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  max-width: 10ch;
+}
+.moreArrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  color: var(--navy);
+  transition: transform var(--dur-hover) var(--ease-out);
+}
+.more:hover .moreArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
