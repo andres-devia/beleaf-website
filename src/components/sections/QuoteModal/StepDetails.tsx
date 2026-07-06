@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { QUOTE_BUDGETS, QUOTE_TIMELINES } from "@/content/quote";
 import { Chip } from "./Chip";
 import styles from "./QuoteModal.module.css";
@@ -10,37 +11,39 @@ interface StepDetailsProps {
 }
 
 export function StepDetails({ message, budget, timeline, onChange }: StepDetailsProps) {
+  const t = useTranslations("QuoteModal.stepDetails");
+
   return (
     <>
-      <h3 className={styles.heading}>Cuéntanos sobre tu proyecto</h3>
+      <h3 className={styles.heading}>{t("heading")}</h3>
       <label className="field">
         <span>
-          Descripción <em className={styles.opt}>breve, en tus palabras</em>
+          {t("descriptionLabel")} <em className={styles.opt}>{t("descriptionHint")}</em>
         </span>
         <textarea
           rows={4}
-          placeholder="Ej. Necesitamos una tienda online con pagos locales y conectarla a nuestro inventario…"
+          placeholder={t("descriptionPlaceholder")}
           value={message}
           onChange={(e) => onChange({ message: e.target.value })}
         />
       </label>
       <span className={styles.k}>
-        Presupuesto estimado <em className={styles.opt}>COP · opcional</em>
+        {t("budgetLabel")} <em className={styles.opt}>{t("budgetHint")}</em>
       </span>
       <div className={styles.row}>
         {QUOTE_BUDGETS.map((b) => (
-          <Chip key={b} on={budget === b} onClick={() => onChange({ budget: budget === b ? "" : b })}>
-            {b}
+          <Chip key={b.key} on={budget === b.key} onClick={() => onChange({ budget: budget === b.key ? "" : b.key })}>
+            {t(`budgets.${b.key}`)}
           </Chip>
         ))}
       </div>
       <span className={styles.k}>
-        ¿Para cuándo? <em className={styles.opt}>opcional</em>
+        {t("timelineLabel")} <em className={styles.opt}>{t("timelineHint")}</em>
       </span>
       <div className={styles.row}>
-        {QUOTE_TIMELINES.map((t) => (
-          <Chip key={t} on={timeline === t} onClick={() => onChange({ timeline: timeline === t ? "" : t })}>
-            {t}
+        {QUOTE_TIMELINES.map((tl) => (
+          <Chip key={tl.key} on={timeline === tl.key} onClick={() => onChange({ timeline: timeline === tl.key ? "" : tl.key })}>
+            {t(`timelines.${tl.key}`)}
           </Chip>
         ))}
       </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ContactFormSchema } from "@/lib/validators";
+import { useLocale, useTranslations } from "next-intl";
+import { createContactFormSchema } from "@/lib/validators";
 import type { ContactFormData, ContactFormStatus, ServiceKey } from "@/types/contact";
 import type { ApiResponse } from "@/types/api";
 
@@ -18,6 +19,8 @@ const INITIAL_VALUES: ContactFormData = {
 };
 
 export function useContactForm(initialServices: ServiceKey[] = []) {
+  const locale = useLocale();
+  const t = useTranslations("Validation");
   const [values, setValues] = useState<ContactFormData>({ ...INITIAL_VALUES, services: initialServices });
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -31,9 +34,15 @@ export function useContactForm(initialServices: ServiceKey[] = []) {
     }));
 
   const validate = (): string | null => {
-    const parsed = ContactFormSchema.safeParse(values);
+    const schema = createContactFormSchema({
+      nameTooShort: t("nameTooShort"),
+      emailInvalid: t("emailInvalid"),
+      messageTooShort: t("messageTooShort"),
+      selectService: t("selectService"),
+    });
+    const parsed = schema.safeParse(values);
     if (parsed.success) return null;
-    return parsed.error.issues[0]?.message ?? "Revisa los datos del formulario.";
+    return parsed.error.issues[0]?.message ?? t("genericInvalid");
   };
 
   const submit = async (): Promise<boolean> => {
@@ -47,7 +56,7 @@ export function useContactForm(initialServices: ServiceKey[] = []) {
     setErrorMessage(null);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`/api/contact?locale=${locale}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -56,7 +65,7 @@ export function useContactForm(initialServices: ServiceKey[] = []) {
 
       if (!res.ok || !body.success) {
         setStatus("error");
-        setErrorMessage(body.message || "No pudimos enviar tu solicitud.");
+        setErrorMessage(body.message || t("sendFailed"));
         return false;
       }
 
@@ -64,7 +73,7 @@ export function useContactForm(initialServices: ServiceKey[] = []) {
       return true;
     } catch {
       setStatus("error");
-      setErrorMessage("No pudimos conectar con el servidor. Intenta de nuevo.");
+      setErrorMessage(t("networkError"));
       return false;
     }
   };

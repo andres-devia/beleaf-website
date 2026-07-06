@@ -1,6 +1,11 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { Mail, MessageCircle, MapPin } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { Mail, MessageCircle, MapPin, ArrowRight } from "lucide-react";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import type { AppLocale } from "@/i18n/routing";
 import { FOOTER_COLUMNS } from "@/content/navigation";
 import { SITE } from "@/content/site";
 import { InstagramIcon, LinkedinIcon, FacebookIcon, GoogleIcon } from "@/components/ui/SocialIcons";
@@ -14,6 +19,18 @@ const SOCIALS = [
 ];
 
 export function Footer() {
+  const t = useTranslations("Footer");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const switchLocale = (next: AppLocale) => {
+    if (next === locale) return;
+    router.replace(pathname, { locale: next });
+  };
+
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.grid} aria-hidden="true" />
@@ -24,16 +41,35 @@ export function Footer() {
           <Link href="/" aria-label="beleafdesign — inicio">
             <Image className={styles.logoImg} src="/images/logo-dark.svg" alt="beleafdesign" width={150} height={37} />
           </Link>
-          <p className={styles.tag}>Diseño, tecnología y estrategia para marcas que quieren crecer.</p>
+          <p className={styles.tag}>{t("tagline")}</p>
+
+          <div className={styles.langToggle} role="group" aria-label="Language / Idioma">
+            <button
+              type="button"
+              className={`${styles.langBtn} ${locale === "en" ? styles.langBtnOn : ""}`}
+              aria-pressed={locale === "en"}
+              onClick={() => switchLocale("en")}
+            >
+              {t("langEn")}
+            </button>
+            <button
+              type="button"
+              className={`${styles.langBtn} ${locale === "es" ? styles.langBtnOn : ""}`}
+              aria-pressed={locale === "es"}
+              onClick={() => switchLocale("es")}
+            >
+              {t("langEs")}
+            </button>
+          </div>
         </div>
 
         {FOOTER_COLUMNS.map((col) => (
-          <div key={col.heading}>
-            <h4 className={styles.colHead}>{col.heading}</h4>
+          <div key={col.key}>
+            <h4 className={styles.colHead}>{col.key === "services" ? t("servicesHeading") : t("agencyHeading")}</h4>
             <div className={styles.links}>
               {col.links.map((link) => (
-                <Link key={link.label} href={link.href}>
-                  {link.label}
+                <Link key={link.key} href={link.href as "/servicios"}>
+                  {t(`links.${link.key}`)}
                 </Link>
               ))}
             </div>
@@ -41,19 +77,19 @@ export function Footer() {
         ))}
 
         <div className={styles.contactCol}>
-          <h4 className={styles.colHead}>Contacto</h4>
+          <h4 className={styles.colHead}>{t("contactHeading")}</h4>
           <div className={styles.contact}>
             <a href={`mailto:${SITE.email}`}>
               <Mail size={16} className={styles.contactIcon} />
               {SITE.email}
             </a>
-            <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer">
+            <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} className={styles.contactIcon} />
-              WhatsApp
+              {t("whatsapp")}
             </a>
             <span className={styles.place}>
               <MapPin size={16} className={styles.contactIcon} />
-              Medellín, Colombia — atención LATAM & US
+              {t("location")}
             </span>
           </div>
           <div className={styles.socials}>
@@ -66,10 +102,42 @@ export function Footer() {
         </div>
       </div>
 
+      <div className={styles.newsletter}>
+        <span className={styles.newsletterDot} aria-hidden="true" />
+        <div className={styles.newsletterIn}>
+          <div>
+            <span className={styles.newsletterLabel}>
+              <Mail size={14} />
+              {t("newsletterLabel")}
+            </span>
+            <p className={styles.newsletterTitle}>{t("newsletterTitle")}</p>
+          </div>
+          <form
+            className={styles.newsletterForm}
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <input
+              type="email"
+              required
+              className={styles.newsletterInput}
+              placeholder={t("newsletterPlaceholder")}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button type="submit" className={styles.newsletterButton} disabled={!emailValid}>
+              {t("newsletterButton")}
+              <ArrowRight size={16} />
+            </button>
+          </form>
+        </div>
+      </div>
+
       <div className={styles.legal}>
         <div className={styles.legalIn}>
-          <span className={styles.legalCopy}>© 2026 beleafdesign. Todos los derechos reservados.</span>
-          <span className={styles.legalCopy}>Hecho en Medellín, Colombia.</span>
+          <span className={styles.legalCopy}>{t("legalCopy", { year: new Date().getFullYear() })}</span>
+          <span className={styles.legalCopy}>{t("legalMade")}</span>
         </div>
       </div>
     </footer>

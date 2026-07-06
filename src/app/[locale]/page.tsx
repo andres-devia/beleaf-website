@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { HomeMuiProvider } from "@/components/layout/HomeMuiProvider";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
@@ -11,13 +12,18 @@ import { TestimonialsMarquee } from "@/components/sections/TestimonialsMarquee";
 import { Stack } from "@/components/sections/Stack";
 import { Process } from "@/components/sections/Process";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { SITE } from "@/content/site";
+import { localizedAlternates } from "@/i18n/metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Agencia digital en Medellín",
-  description: SITE.description,
-  alternates: { canonical: "/" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata.home" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: localizedAlternates("/", locale as AppLocale),
+  };
+}
 
 export default function HomePage() {
   return (

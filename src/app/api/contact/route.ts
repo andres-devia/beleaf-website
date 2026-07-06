@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ContactFormSchema } from "@/lib/validators";
+import { getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { createContactFormSchema } from "@/lib/validators";
 import { isRateLimited } from "@/lib/rateLimit";
 import { createLead } from "@/services/leadService";
+import { routing } from "@/i18n/routing";
 import type { ApiResponse } from "@/types/api";
 
 /* Mongoose requires Node.js APIs (TCP sockets) that the Edge runtime does not
@@ -16,9 +19,16 @@ function getClientIp(request: NextRequest): string {
 
 export async function POST(request: NextRequest) {
   const ip = getClientIp(request);
+  const requestedLocale = request.nextUrl.searchParams.get("locale");
+  const locale = hasLocale(routing.locales, requestedLocale) ? requestedLocale : routing.defaultLocale;
+
+  const [tApi, tValidation] = await Promise.all([
+    getTranslations({ locale, namespace: "Api" }),
+    getTranslations({ locale, namespace: "Validation" }),
+  ]);
 
   if (isRateLimited(ip)) {
-    const body: ApiResponse = { success: false, message: "Demasiadas solicitudes. Intenta de nuevo en un rato." };
+    const body: ApiResponse = { success: false, message: tApi("rateLimited") };
     return NextResponse.json(body, { status: 429 });
   }
 
@@ -26,13 +36,19 @@ export async function POST(request: NextRequest) {
   try {
     json = await request.json();
   } catch {
-    const body: ApiResponse = { success: false, message: "Solicitud inválida." };
+    const body: ApiResponse = { success: false, message: tApi("invalidRequest") };
     return NextResponse.json(body, { status: 400 });
   }
 
+  const ContactFormSchema = createContactFormSchema({
+    nameTooShort: tValidation("nameTooShort"),
+    emailInvalid: tValidation("emailInvalid"),
+    messageTooShort: tValidation("messageTooShort"),
+    selectService: tValidation("selectService"),
+  });
   const parsed = ContactFormSchema.safeParse(json);
   if (!parsed.success) {
-    const body: ApiResponse = { success: false, message: "Revisa los datos del formulario." };
+    const body: ApiResponse = { success: false, message: tApi("validationFailed") };
     return NextResponse.json(body, { status: 400 });
   }
 
@@ -40,10 +56,10 @@ export async function POST(request: NextRequest) {
     await createLead(parsed.data, ip);
   } catch (error) {
     console.error("createLead failed", error);
-    const body: ApiResponse = { success: false, message: "No pudimos guardar tu solicitud. Intenta de nuevo." };
+    const body: ApiResponse = { success: false, message: tApi("serverError") };
     return NextResponse.json(body, { status: 500 });
   }
 
-  const body: ApiResponse = { success: true, message: "¡Solicitud enviada! Te respondemos en menos de 24 horas hábiles." };
+  const body: ApiResponse = { success: true, message: tApi("success") };
   return NextResponse.json(body, { status: 200 });
 }

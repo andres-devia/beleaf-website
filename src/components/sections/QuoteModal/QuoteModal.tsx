@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { useContactForm } from "@/hooks/useContactForm";
 import { QUOTE_STEPS } from "@/content/quote";
@@ -22,6 +23,7 @@ interface QuoteModalProps {
 }
 
 export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
+  const t = useTranslations("QuoteModal");
   const form = useContactForm(preselect);
   const [step, setStep] = useState(0);
   const [stepError, setStepError] = useState("");
@@ -32,7 +34,7 @@ export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
     setStepError("");
     form.reset();
     if (preselect.length) {
-      form.update({ services: preselect, message: `Interesado en: ${preselect.join(", ")}.\n` });
+      form.update({ message: t("interestedIn", { services: preselect.join(", ") }) + "\n", services: preselect });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
@@ -42,14 +44,14 @@ export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
   const goNext = () => {
     setStepError("");
     if (step === 0 && form.values.services.length === 0) {
-      setStepError("Selecciona al menos un servicio para continuar.");
+      setStepError(t("errors.selectService"));
       return;
     }
     if (step === 2) {
-      if (!form.values.name.trim()) return setStepError("Cuéntanos tu nombre.");
-      if (!EMAIL_RE.test(form.values.email)) return setStepError("Revisa el correo — lo necesitamos para responderte.");
+      if (!form.values.name.trim()) return setStepError(t("errors.name"));
+      if (!EMAIL_RE.test(form.values.email)) return setStepError(t("errors.email"));
       const phone = (form.values.phone ?? "").replace(/[\s\-.]/g, "");
-      if (phone && !PHONE_RE.test(phone)) return setStepError("Revisa el teléfono (formato Colombia, ej. 300 123 4567).");
+      if (phone && !PHONE_RE.test(phone)) return setStepError(t("errors.phone"));
     }
     setStep((s) => Math.min(3, s + 1));
   };
@@ -60,11 +62,12 @@ export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
   };
 
   const errorToShow = stepError || (form.status === "error" ? form.errorMessage : null);
+  const stepLabels = QUOTE_STEPS.map((s) => t(`steps.${s.key}`));
 
   return (
     <div className={styles.scrim} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose} aria-label="Cerrar">
+        <button className={styles.close} onClick={onClose} aria-label={t("close")}>
           <X size={22} />
         </button>
 
@@ -72,16 +75,16 @@ export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
           <Success onClose={onClose} />
         ) : (
           <>
-            <span className="ds-eyebrow">Cotiza tu proyecto</span>
+            <span className="ds-eyebrow">{t("eyebrow")}</span>
             <div
               className={styles.progress}
               role="progressbar"
               aria-valuenow={step + 1}
               aria-valuemin={1}
               aria-valuemax={4}
-              aria-label={QUOTE_STEPS[step]}
+              aria-label={stepLabels[step]}
             >
-              {QUOTE_STEPS.map((label, i) => (
+              {stepLabels.map((label, i) => (
                 <span key={label} className={`${styles.seg} ${i < step ? styles.segDone : ""} ${i === step ? styles.segNow : ""}`}>
                   <em>{label}</em>
                 </span>
@@ -127,18 +130,18 @@ export function QuoteModal({ open, onClose, preselect }: QuoteModalProps) {
                   }}
                 >
                   <ArrowLeft size={16} />
-                  Atrás
+                  {t("back")}
                 </button>
               )}
               {step < 3 ? (
                 <button type="button" className="btn btn-primary" onClick={goNext}>
-                  Continuar
+                  {t("continue")}
                   <ArrowRight size={16} />
                 </button>
               ) : (
                 <button type="button" className="btn btn-primary" disabled={form.status === "submitting"} onClick={handleSubmit}>
                   {form.status === "submitting" && <span className={styles.spin} aria-hidden="true" />}
-                  {form.status === "submitting" ? "Enviando…" : "Enviar solicitud"}
+                  {form.status === "submitting" ? t("sending") : t("submit")}
                 </button>
               )}
             </div>

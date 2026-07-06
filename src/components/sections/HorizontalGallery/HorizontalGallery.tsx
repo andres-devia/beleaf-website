@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import { GALLERY_ITEMS } from "@/content/portfolio";
 import styles from "./HorizontalGallery.module.css";

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import styles from "./QuoteModal.module.css";
 
 interface StepContactProps {
@@ -9,29 +10,31 @@ interface StepContactProps {
 }
 
 export function StepContact({ name, email, phone, company, onChange }: StepContactProps) {
+  const t = useTranslations("QuoteModal.stepContact");
+
   return (
     <>
-      <h3 className={styles.heading}>¿A quién le respondemos?</h3>
+      <h3 className={styles.heading}>{t("heading")}</h3>
       <div className={styles.col2}>
         <label className="field">
-          <span>Nombre</span>
-          <input required placeholder="¿Cómo te llamas?" value={name} onChange={(e) => onChange({ name: e.target.value })} />
+          <span>{t("nameLabel")}</span>
+          <input required placeholder={t("namePlaceholder")} value={name} onChange={(e) => onChange({ name: e.target.value })} />
         </label>
         <label className="field">
-          <span>Correo</span>
-          <input required type="email" placeholder="hola@empresa.co" value={email} onChange={(e) => onChange({ email: e.target.value })} />
-        </label>
-        <label className="field">
-          <span>
-            Teléfono <em className={styles.opt}>opcional</em>
-          </span>
-          <input type="tel" placeholder="+57 300 123 4567" value={phone} onChange={(e) => onChange({ phone: e.target.value })} />
+          <span>{t("emailLabel")}</span>
+          <input required type="email" placeholder={t("emailPlaceholder")} value={email} onChange={(e) => onChange({ email: e.target.value })} />
         </label>
         <label className="field">
           <span>
-            Empresa <em className={styles.opt}>opcional</em>
+            {t("phoneLabel")} <em className={styles.opt}>{t("optional")}</em>
           </span>
-          <input placeholder="Nombre de tu empresa" value={company} onChange={(e) => onChange({ company: e.target.value })} />
+          <input type="tel" placeholder={t("phonePlaceholder")} value={phone} onChange={(e) => onChange({ phone: e.target.value })} />
+        </label>
+        <label className="field">
+          <span>
+            {t("companyLabel")} <em className={styles.opt}>{t("optional")}</em>
+          </span>
+          <input placeholder={t("companyPlaceholder")} value={company} onChange={(e) => onChange({ company: e.target.value })} />
         </label>
       </div>
     </>

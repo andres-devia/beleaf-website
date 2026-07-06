@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "@/i18n/navigation";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
 import { ICON_MAP } from "@/components/ui/iconMap";
@@ -21,7 +21,7 @@ export function ServicesGrid() {
             return (
               <Col key={service.title}>
                 <Reveal delay={((i % 3) + 1) as 1 | 2 | 3} className={styles.revealCard}>
-                  <Link href={service.slug} className={styles.card}>
+                  <Link href={service.slug as "/servicios"} className={styles.card}>
                     <span className={styles.icon}>
                       <ServiceIcon size={23} strokeWidth={2} />
                     </span>

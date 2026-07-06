@@ -1,0 +1,187 @@
+{
+  "Nav": {
+    "ariaMain": "Principal",
+    "ariaMenu": "Menú",
+    "ariaLogo": "beleafdesign — inicio",
+    "servicePages": "Páginas de servicio",
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "portfolio": "Portafolio",
+    "cta": "Cotiza tu proyecto",
+    "pillars": {
+      "web": { "label": "Desarrollo web a la medida", "short": "Desarrollo web" },
+      "ecommerce": { "label": "E-commerce", "short": "E-commerce" },
+      "seo": { "label": "SEO técnico con IA", "short": "SEO técnico" },
+      "automation": { "label": "Automatización con IA", "short": "Automatización IA" },
+      "crm": { "label": "Implementación & Desarrollo CRM", "short": "CRM & Automatización" },
+      "saas": { "label": "Plataformas SaaS", "short": "Plataformas SaaS" }
+    }
+  },
+  "Footer": {
+    "tagline": "Diseño, tecnología y estrategia para marcas que quieren crecer.",
+    "servicesHeading": "Servicios",
+    "agencyHeading": "Agencia",
+    "contactHeading": "Contacto",
+    "whatsapp": "WhatsApp",
+    "location": "Medellín, Colombia — atención LATAM & US",
+    "links": {
+      "web": "Desarrollo web",
+      "ecommerce": "E-commerce",
+      "seo": "SEO técnico",
+      "automation": "Automatización IA",
+      "crm": "Implementación & Desarrollo CRM",
+      "saas": "Plataformas SaaS",
+      "nosotros": "Nosotros",
+      "portafolio": "Portafolio",
+      "proceso": "Proceso",
+      "contacto": "Contacto"
+    },
+    "newsletterLabel": "Newsletter",
+    "newsletterTitle": "Recibe estrategias, recursos y tendencias digitales directo en tu bandeja.",
+    "newsletterPlaceholder": "Tu correo electrónico",
+    "newsletterButton": "Suscribirse",
+    "langEs": "ES",
+    "langEn": "EN",
+    "legalCopy": "© {year} beleafdesign. Todos los derechos reservados.",
+    "legalMade": "Hecho en Medellín, Colombia."
+  },
+  "Services": {
+    "web": "Desarrollo Web",
+    "seo": "SEO & Posicionamiento",
+    "branding": "Branding & Diseño",
+    "marketing": "Marketing Digital",
+    "ads": "Publicidad Digital",
+    "ia": "IA & Automatización",
+    "crm": "Implementación CRM",
+    "video": "Producción Audiovisual"
+  },
+  "QuoteModal": {
+    "eyebrow": "Cotiza tu proyecto",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "sending": "Enviando…",
+    "submit": "Enviar solicitud",
+    "steps": {
+      "services": "Tipo de proyecto",
+      "details": "Detalles",
+      "contact": "Tus datos",
+      "review": "Revisión"
+    },
+    "errors": {
+      "selectService": "Selecciona al menos un servicio para continuar.",
+      "name": "Cuéntanos tu nombre.",
+      "email": "Revisa el correo — lo necesitamos para responderte.",
+      "phone": "Revisa el teléfono (formato Colombia, ej. 300 123 4567)."
+    },
+    "interestedIn": "Interesado en: {services}.",
+    "stepServices": {
+      "heading": "¿Qué tipo de proyecto tienes en mente?",
+      "sub": "Selecciona todo lo que aplique."
+    },
+    "stepDetails": {
+      "heading": "Cuéntanos sobre tu proyecto",
+      "descriptionLabel": "Descripción",
+      "descriptionHint": "breve, en tus palabras",
+      "descriptionPlaceholder": "Ej. Necesitamos una tienda online con pagos locales y conectarla a nuestro inventario…",
+      "budgetLabel": "Presupuesto estimado",
+      "budgetHint": "COP · opcional",
+      "timelineLabel": "¿Para cuándo?",
+      "timelineHint": "opcional",
+      "budgets": {
+        "under-5m": "Menos de $5M",
+        "5-to-15m": "$5M – $15M",
+        "15-to-40m": "$15M – $40M",
+        "over-40m": "Más de $40M",
+        "unsure": "Aún no lo sé"
+      },
+      "timelines": {
+        "asap": "Lo antes posible",
+        "1-to-3-months": "1–3 meses",
+        "3-to-6-months": "3–6 meses",
+        "flexible": "Flexible"
+      }
+    },
+    "stepContact": {
+      "heading": "¿A quién le respondemos?",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "¿Cómo te llamas?",
+      "emailLabel": "Correo",
+      "emailPlaceholder": "hola@empresa.co",
+      "phoneLabel": "Teléfono",
+      "phonePlaceholder": "+57 300 123 4567",
+      "companyLabel": "Empresa",
+      "companyPlaceholder": "Nombre de tu empresa",
+      "optional": "opcional"
+    },
+    "stepReview": {
+      "heading": "Revisa y envía",
+      "sub": "Toca cualquier dato para editarlo.",
+      "servicesLabel": "Servicios",
+      "detailsLabel": "Detalles",
+      "contactLabel": "Contacto"
+    },
+    "success": {
+      "heading": "¡Solicitud enviada!",
+      "body": "Te contactaremos en menos de 24 horas hábiles con una propuesta inicial. Gracias por confiar en beleafdesign.",
+      "done": "Listo"
+    }
+  },
+  "ContactForm": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Tu empresa",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "tu@correo.com",
+    "phoneLabel": "WhatsApp",
+    "phonePlaceholder": "+57 300 000 0000",
+    "servicesLabel": "¿Qué necesitas?",
+    "messageLabel": "Cuéntanos sobre tu proyecto",
+    "messagePlaceholder": "Qué quieres construir, en qué etapa estás y cuándo lo necesitas.",
+    "sending": "Enviando…",
+    "submit": "Enviar mensaje",
+    "successHeading": "¡Mensaje recibido!",
+    "successBody": "Gracias por escribirnos. Te respondemos en menos de 24 horas hábiles con un plan claro para tu proyecto."
+  },
+  "Validation": {
+    "nameTooShort": "El nombre es muy corto",
+    "emailInvalid": "Correo inválido",
+    "messageTooShort": "Cuéntanos un poco más sobre tu proyecto",
+    "selectService": "Selecciona al menos un servicio",
+    "genericInvalid": "Revisa los datos del formulario.",
+    "sendFailed": "No pudimos enviar tu solicitud.",
+    "networkError": "No pudimos conectar con el servidor. Intenta de nuevo."
+  },
+  "Api": {
+    "rateLimited": "Demasiadas solicitudes. Intenta de nuevo en un rato.",
+    "invalidRequest": "Solicitud inválida.",
+    "validationFailed": "Revisa los datos del formulario.",
+    "serverError": "No pudimos guardar tu solicitud. Intenta de nuevo.",
+    "success": "¡Solicitud enviada! Te respondemos en menos de 24 horas hábiles."
+  },
+  "Metadata": {
+    "home": {
+      "title": "Agencia digital en Medellín",
+      "description": "Agencia digital en Medellín, Colombia. Diseñamos y construimos sitios web, e-commerce, SEO técnico con IA, automatización, CRM y plataformas SaaS."
+    },
+    "nosotros": {
+      "title": "Sobre nosotros",
+      "description": "Somos beleafdesign, agencia digital en Medellín. Estrategia, desarrollo, diseño y automatización con IA para empresas en Colombia y Latinoamérica."
+    },
+    "servicios": {
+      "title": "Servicios",
+      "description": "Un equipo, todas las soluciones digitales que tu marca necesita: web, SEO, branding, marketing, IA, CRM y más. Atención en Colombia, LATAM y EE.UU."
+    },
+    "portafolio": {
+      "title": "Portafolio",
+      "description": "Portafolio de beleafdesign: e-commerce, plataformas SaaS, SEO técnico, IA y branding para empresas en Colombia y LATAM. Proyectos que hablan por sí solos."
+    },
+    "contacto": {
+      "title": "Contacto",
+      "description": "Cuéntanos qué necesitas construir. Te respondemos en menos de 24 horas hábiles con un plan claro para tu proyecto."
+    }
+  }
+}

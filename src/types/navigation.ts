@@ -1,4 +1,5 @@
 export interface PillarNavItem {
+  key: string;
   slug: string;
   label: string;
   short: string;
@@ -6,18 +7,14 @@ export interface PillarNavItem {
   live: boolean;
 }
 
-export interface NavPageLink {
-  label: string;
-  href: string;
-  key: string;
-}
-
 export interface FooterLink {
+  key: string;
   label: string;
   href: string;
 }
 
 export interface FooterColumn {
+  key: string;
   heading: string;
   links: FooterLink[];
 }

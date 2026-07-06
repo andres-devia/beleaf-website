@@ -1,11 +1,14 @@
 "use client";
 
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useContactForm } from "@/hooks/useContactForm";
 import { CONTACT_SERVICE_OPTIONS } from "@/content/contact";
 import styles from "./ContactSection.module.css";
 
 export function ContactSection() {
+  const t = useTranslations("ContactForm");
+  const tServices = useTranslations("Services");
   const form = useContactForm();
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -22,11 +25,8 @@ export function ContactSection() {
               <span className={styles.successCheck}>
                 <Check size={28} strokeWidth={3} />
               </span>
-              <h2 className="ds-h3">¡Mensaje recibido!</h2>
-              <p className="ds-body">
-                Gracias por escribirnos. Te respondemos en menos de 24 horas hábiles con un plan claro para tu
-                proyecto.
-              </p>
+              <h2 className="ds-h3">{t("successHeading")}</h2>
+              <p className="ds-body">{t("successBody")}</p>
             </div>
           </div>
         </div>
@@ -40,27 +40,33 @@ export function ContactSection() {
         <form className={styles.form} onSubmit={onSubmit}>
           <div className={styles.row}>
             <label className="field">
-              <span>Nombre</span>
-              <input required placeholder="Tu nombre" value={form.values.name} onChange={(e) => form.update({ name: e.target.value })} />
+              <span>{t("nameLabel")}</span>
+              <input required placeholder={t("namePlaceholder")} value={form.values.name} onChange={(e) => form.update({ name: e.target.value })} />
             </label>
             <label className="field">
-              <span>Empresa</span>
-              <input placeholder="Tu empresa" value={form.values.company} onChange={(e) => form.update({ company: e.target.value })} />
+              <span>{t("companyLabel")}</span>
+              <input placeholder={t("companyPlaceholder")} value={form.values.company} onChange={(e) => form.update({ company: e.target.value })} />
             </label>
           </div>
           <div className={styles.row}>
             <label className="field">
-              <span>Correo</span>
-              <input required type="email" placeholder="tu@correo.com" value={form.values.email} onChange={(e) => form.update({ email: e.target.value })} />
+              <span>{t("emailLabel")}</span>
+              <input
+                required
+                type="email"
+                placeholder={t("emailPlaceholder")}
+                value={form.values.email}
+                onChange={(e) => form.update({ email: e.target.value })}
+              />
             </label>
             <label className="field">
-              <span>WhatsApp</span>
-              <input type="tel" placeholder="+57 300 000 0000" value={form.values.phone} onChange={(e) => form.update({ phone: e.target.value })} />
+              <span>{t("phoneLabel")}</span>
+              <input type="tel" placeholder={t("phonePlaceholder")} value={form.values.phone} onChange={(e) => form.update({ phone: e.target.value })} />
             </label>
           </div>
 
           <label className="field">
-            <span>¿Qué necesitas?</span>
+            <span>{t("servicesLabel")}</span>
             <div className={styles.services}>
               {CONTACT_SERVICE_OPTIONS.map((option) => {
                 const on = form.values.services.includes(option.key);
@@ -73,7 +79,7 @@ export function ContactSection() {
                     onClick={() => form.toggleService(option.key)}
                   >
                     {on && <Check size={14} />}
-                    {option.label}
+                    {tServices(option.key)}
                   </button>
                 );
               })}
@@ -81,10 +87,10 @@ export function ContactSection() {
           </label>
 
           <label className="field">
-            <span>Cuéntanos sobre tu proyecto</span>
+            <span>{t("messageLabel")}</span>
             <textarea
               rows={4}
-              placeholder="Qué quieres construir, en qué etapa estás y cuándo lo necesitas."
+              placeholder={t("messagePlaceholder")}
               value={form.values.message}
               onChange={(e) => form.update({ message: e.target.value })}
             />
@@ -93,7 +99,7 @@ export function ContactSection() {
           {form.status === "error" && form.errorMessage && <p className={styles.error}>{form.errorMessage}</p>}
 
           <button type="submit" className={`btn btn-primary ${styles.submit}`} disabled={form.status === "submitting"}>
-            {form.status === "submitting" ? "Enviando…" : "Enviar mensaje"}
+            {form.status === "submitting" ? t("sending") : t("submit")}
           </button>
         </form>
       </div>

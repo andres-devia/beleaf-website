@@ -1,5 +1,5 @@
 import { Pencil } from "lucide-react";
-import { QUOTE_SERVICES } from "@/content/quote";
+import { useTranslations } from "next-intl";
 import type { ContactFormData } from "@/types/contact";
 import styles from "./QuoteModal.module.css";
 
@@ -9,19 +9,21 @@ interface StepReviewProps {
 }
 
 export function StepReview({ values, onEdit }: StepReviewProps) {
-  const serviceLabel = (key: string) => QUOTE_SERVICES.find((s) => s.key === key)?.label ?? key;
+  const t = useTranslations("QuoteModal.stepReview");
+  const tServices = useTranslations("Services");
+  const tDetails = useTranslations("QuoteModal.stepDetails");
 
   return (
     <>
-      <h3 className={styles.heading}>Revisa y envía</h3>
-      <p className={styles.sub}>Toca cualquier dato para editarlo.</p>
+      <h3 className={styles.heading}>{t("heading")}</h3>
+      <p className={styles.sub}>{t("sub")}</p>
       <div className={styles.review}>
         <div>
-          <span className={styles.k}>Servicios</span>
+          <span className={styles.k}>{t("servicesLabel")}</span>
           <div className={styles.row}>
             {values.services.map((key) => (
               <button key={key} type="button" className={styles.revChip} onClick={() => onEdit(0)}>
-                {serviceLabel(key)}
+                {tServices(key)}
                 <Pencil size={12} />
               </button>
             ))}
@@ -30,7 +32,7 @@ export function StepReview({ values, onEdit }: StepReviewProps) {
 
         {(values.budget || values.timeline || values.message.trim()) && (
           <div>
-            <span className={styles.k}>Detalles</span>
+            <span className={styles.k}>{t("detailsLabel")}</span>
             <div className={styles.row}>
               {values.message.trim() && (
                 <button type="button" className={styles.revChip} onClick={() => onEdit(1)}>
@@ -41,13 +43,13 @@ export function StepReview({ values, onEdit }: StepReviewProps) {
               )}
               {values.budget && (
                 <button type="button" className={styles.revChip} onClick={() => onEdit(1)}>
-                  {values.budget}
+                  {tDetails(`budgets.${values.budget}`)}
                   <Pencil size={12} />
                 </button>
               )}
               {values.timeline && (
                 <button type="button" className={styles.revChip} onClick={() => onEdit(1)}>
-                  {values.timeline}
+                  {tDetails(`timelines.${values.timeline}`)}
                   <Pencil size={12} />
                 </button>
               )}
@@ -56,7 +58,7 @@ export function StepReview({ values, onEdit }: StepReviewProps) {
         )}
 
         <div>
-          <span className={styles.k}>Contacto</span>
+          <span className={styles.k}>{t("contactLabel")}</span>
           <div className={styles.row}>
             <button type="button" className={styles.revChip} onClick={() => onEdit(2)}>
               {values.name}

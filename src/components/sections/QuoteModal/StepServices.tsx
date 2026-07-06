@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { QUOTE_SERVICES } from "@/content/quote";
 import type { ServiceKey } from "@/types/contact";
 import { Chip } from "./Chip";
@@ -9,14 +10,17 @@ interface StepServicesProps {
 }
 
 export function StepServices({ selected, onToggle }: StepServicesProps) {
+  const t = useTranslations("QuoteModal.stepServices");
+  const tServices = useTranslations("Services");
+
   return (
     <>
-      <h3 className={styles.heading}>¿Qué tipo de proyecto tienes en mente?</h3>
-      <p className={styles.sub}>Selecciona todo lo que aplique.</p>
+      <h3 className={styles.heading}>{t("heading")}</h3>
+      <p className={styles.sub}>{t("sub")}</p>
       <div className={styles.grid}>
         {QUOTE_SERVICES.map((s) => (
           <Chip key={s.key} on={selected.includes(s.key as ServiceKey)} onClick={() => onToggle(s.key as ServiceKey)} icon={s.icon}>
-            {s.label}
+            {tServices(s.key)}
           </Chip>
         ))}
       </div>

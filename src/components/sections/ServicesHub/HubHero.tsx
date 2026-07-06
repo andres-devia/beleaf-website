@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { HUB_HERO } from "@/content/servicesHub";
 import styles from "./ServicesHub.module.css";
 

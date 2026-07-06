@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
-import { PILLARS, NAV_PAGES } from "@/content/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { PILLARS } from "@/content/navigation";
 import { useQuoteModal } from "@/hooks/useQuoteModal";
 import styles from "./PillNav.module.css";
 
@@ -17,21 +17,22 @@ interface NavItem {
   cta?: boolean;
 }
 
-const NAV_ITEMS: NavItem[] = [
-  { key: "inicio", label: "Inicio", href: "/" },
-  { key: "servicios", label: "Servicios", href: "/servicios", drop: true },
-  { key: "nosotros", label: "Nosotros", href: "/nosotros" },
-  { key: "contacto", label: "Contacto", cta: true },
-  ...NAV_PAGES.filter((p) => p.key !== "nosotros").map((p) => ({ key: p.key, label: p.label, href: p.href })),
-];
-
 export function PillNav() {
+  const t = useTranslations("Nav");
   const pathname = usePathname();
   const { open } = useQuoteModal();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropOpen, setDropOpen] = useState(false);
   const sentinelRef = useRef<HTMLSpanElement>(null);
+
+  const NAV_ITEMS: NavItem[] = [
+    { key: "inicio", label: t("home"), href: "/" },
+    { key: "servicios", label: t("services"), href: "/servicios", drop: true },
+    { key: "nosotros", label: t("about"), href: "/nosotros" },
+    { key: "contacto", label: t("contact"), cta: true },
+    { key: "portafolio", label: t("portfolio"), href: "/portafolio" },
+  ];
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
@@ -45,9 +46,9 @@ export function PillNav() {
 
   return (
     <>
-      <nav className={styles.nav} aria-label="Principal">
+      <nav className={styles.nav} aria-label={t("ariaMain")}>
         <div className={styles.inner}>
-          <Link href="/" className={styles.logo} aria-label="beleafdesign — inicio">
+          <Link href="/" className={styles.logo} aria-label={t("ariaLogo")}>
             <Image className={styles.logoImg} src="/images/logo-dark.svg" alt="beleafdesign" width={150} height={37} priority />
           </Link>
 
@@ -64,15 +65,15 @@ export function PillNav() {
                   onMouseEnter={() => setDropOpen(true)}
                   onMouseLeave={() => setDropOpen(false)}
                 >
-                  <Link href={item.href ?? "/"} className={`${styles.pill} ${pathname === item.href ? styles.on : ""}`}>
+                  <Link href={(item.href as "/servicios") ?? "/"} className={`${styles.pill} ${pathname === item.href ? styles.on : ""}`}>
                     <NavLabel label={item.label} active={pathname === item.href} />
                     {pathname === item.href && <span className={styles.dot} />}
                   </Link>
                   <div className={`${styles.drop} ${dropOpen ? styles.dropShow : ""}`}>
-                    <div className={styles.dropHead}>Páginas de servicio</div>
+                    <div className={styles.dropHead}>{t("servicePages")}</div>
                     {PILLARS.map((p) => (
-                      <Link key={p.slug} href={p.slug} className={styles.dropItem}>
-                        {p.label}
+                      <Link key={p.key} href={p.slug as "/servicios"} className={styles.dropItem}>
+                        {t(`pillars.${p.key}.label`)}
                       </Link>
                     ))}
                   </div>
@@ -80,7 +81,7 @@ export function PillNav() {
               ) : (
                 <Link
                   key={item.key}
-                  href={item.href ?? "/"}
+                  href={(item.href as "/") ?? "/"}
                   className={`${styles.pill} ${pathname === item.href ? styles.on : ""}`}
                 >
                   <NavLabel label={item.label} active={pathname === item.href} />
@@ -91,13 +92,13 @@ export function PillNav() {
           </div>
 
           <button type="button" className={styles.cta} onClick={() => open()}>
-            Cotiza tu proyecto
+            {t("cta")}
           </button>
 
           <button
             type="button"
             className={styles.burger}
-            aria-label="Menú"
+            aria-label={t("ariaMenu")}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
@@ -122,7 +123,7 @@ export function PillNav() {
             ) : (
               <Link
                 key={item.key}
-                href={item.href ?? "/"}
+                href={(item.href as "/") ?? "/"}
                 className={`${styles.mLink} ${pathname === item.href ? styles.mLinkOn : ""}`}
                 onClick={() => setMobileOpen(false)}
               >
@@ -132,8 +133,8 @@ export function PillNav() {
           )}
           <div className={styles.mSub}>
             {PILLARS.map((p) => (
-              <Link key={p.slug} href={p.slug} className={styles.mSublink} onClick={() => setMobileOpen(false)}>
-                {p.short}
+              <Link key={p.key} href={p.slug as "/servicios"} className={styles.mSublink} onClick={() => setMobileOpen(false)}>
+                {t(`pillars.${p.key}.short`)}
               </Link>
             ))}
           </div>
@@ -145,7 +146,7 @@ export function PillNav() {
               open();
             }}
           >
-            Cotiza tu proyecto
+            {t("cta")}
           </button>
         </div>
       </nav>
