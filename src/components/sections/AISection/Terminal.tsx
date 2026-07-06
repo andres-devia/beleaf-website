@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { TERMINAL_LINES } from "@/content/home";
 import styles from "./AISection.module.css";
 
 export function Terminal() {
+  const t = useTranslations("Home.terminal");
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState<number[]>([]);
 
@@ -40,7 +42,7 @@ export function Terminal() {
               <div className={styles.line} key={i}>
                 <span className={line.ok ? styles.promptOk : styles.prompt}>{line.prompt}</span>
                 <span className={line.muted ? styles.textMuted : line.ok ? styles.textOk : styles.text}>
-                  {line.text}
+                  {t(line.key)}
                 </span>
               </div>
             ),

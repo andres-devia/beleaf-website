@@ -1,5 +1,8 @@
+"use client";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
@@ -8,27 +11,26 @@ import { SERVICES } from "@/content/services";
 import styles from "./ServicesGrid.module.css";
 
 export function ServicesGrid() {
+  const t = useTranslations("Home.servicesGrid");
+
   return (
     <section className={`${styles.services} section`} id="servicios">
       <div className={styles.inner}>
-        <SectionTitle
-          kicker="Nuestros servicios"
-          title="Todo lo que tu marca necesita para crecer en digital"
-        />
+        <SectionTitle kicker={t("kicker")} title={t("title")} />
         <Row xs={1} md={2} lg={3} className={`g-0 ${styles.grid}`}>
           {SERVICES.map((service, i) => {
             const ServiceIcon = ICON_MAP[service.icon];
             return (
-              <Col key={service.title}>
+              <Col key={service.key}>
                 <Reveal delay={((i % 3) + 1) as 1 | 2 | 3} className={styles.revealCard}>
                   <Link href={service.slug as "/servicios"} className={styles.card}>
                     <span className={styles.icon}>
                       <ServiceIcon size={23} strokeWidth={2} />
                     </span>
-                    <h3 className={styles.title}>{service.title}</h3>
-                    <p className={styles.body}>{service.body}</p>
+                    <h3 className={styles.title}>{t(`items.${service.key}.title`)}</h3>
+                    <p className={styles.body}>{t(`items.${service.key}.body`)}</p>
                     <span className={styles.link}>
-                      Ver servicio <span className={styles.arrow}>→</span>
+                      {t("link")} <span className={styles.arrow}>→</span>
                     </span>
                   </Link>
                 </Reveal>

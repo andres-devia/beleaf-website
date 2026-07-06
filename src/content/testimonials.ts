@@ -2,6 +2,7 @@ import type { Testimonial } from "@/types/portfolio";
 
 export const TESTIMONIALS: Testimonial[] = [
   {
+    key: "ortotex",
     initials: "MV",
     name: "Mariana Vélez",
     company: "Ortotex",
@@ -10,6 +11,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "El rediseño y el SEO técnico nos sacaron del anonimato. Hoy los distribuidores nos encuentran a nosotros, no al revés.",
   },
   {
+    key: "grassranch",
     initials: "AO",
     name: "Andrés Otálvoro",
     company: "Grassranch",
@@ -18,6 +20,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "Pasamos de un catálogo en PDF a una tienda que vende sola. El checkout optimizado se nota en la facturación.",
   },
   {
+    key: "kreatup",
     initials: "LC",
     name: "Laura Cadavid",
     company: "KreatUp",
@@ -26,6 +29,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "Conectaron el sitio con el CRM y dejamos de perder oportunidades en el correo. Cada lead llega con contexto.",
   },
   {
+    key: "cervantes",
     initials: "CC",
     name: "Dr. Carlos Cervantes",
     company: "Consultorio especializado",
@@ -34,6 +38,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "Mis pacientes agendan solos, el recordatorio es automático y mi asistente recuperó media jornada a la semana.",
   },
   {
+    key: "coldcare",
     initials: "CR",
     name: "Kate Morrison",
     company: "Cold Care Recovery",
@@ -42,6 +47,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "Entendieron un mercado de nicho en inglés y español. La velocidad del sitio y el SEO internacional hicieron el resto.",
   },
   {
+    key: "elevator",
     initials: "EA",
     name: "Juliana Mesa",
     company: "Elevator Agencia",

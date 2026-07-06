@@ -1,4 +1,132 @@
 {
+  "Home": {
+    "hero": {
+      "eyebrow": "Agencia digital · Medellín, Colombia",
+      "headline": "Diseñamos y construimos el sitio que tu negocio merece",
+      "sub": "Sitios, e-commerce y plataformas a la medida. Rápidos, medibles y listos para crecer contigo.",
+      "pickLabel": "¿Qué necesitas construir?",
+      "pickHint": "Selecciona todo lo que aplique",
+      "pills": {
+        "web": "Sitio web",
+        "ecommerce": "E-commerce",
+        "seo": "SEO técnico",
+        "automation": "Automatización IA",
+        "crm": "CRM",
+        "saas": "Plataforma SaaS"
+      },
+      "stats": {
+        "projects": "Proyectos entregados",
+        "years": "Construyendo en LATAM",
+        "growth": "Crecimiento orgánico medio",
+        "custom": "Código a la medida"
+      },
+      "yearsSuffix": " años",
+      "bannerK": "Listo para cotizar",
+      "bannerCta": "Empecemos",
+      "hintPre": "Toca un servicio para armar tu proyecto, o",
+      "hintLink": "cotiza directo"
+    },
+    "marquee": {
+      "web": "Desarrollo web",
+      "ecommerce": "E-commerce",
+      "seo": "SEO técnico con IA",
+      "automation": "Automatización",
+      "crm": "CRM & Automatización",
+      "saas": "Plataformas SaaS",
+      "landing": "Landing pages"
+    },
+    "statement": {
+      "kicker": "Quiénes somos",
+      "title": "No vendemos plantillas. Construimos producto digital con criterio de ingeniería y ojo de diseño.",
+      "body": "Somos un equipo técnico-creativo en Medellín. Trabajamos con startups, pymes y empresas de toda Latinoamérica que necesitan un partner serio para construir y hacer crecer su presencia digital."
+    },
+    "servicesGrid": {
+      "kicker": "Nuestros servicios",
+      "title": "Todo lo que tu marca necesita para crecer en digital",
+      "items": {
+        "web": { "title": "Desarrollo web", "body": "WordPress, Shopify, Next.js, React y código puro. Sitios rápidos, seguros y a la medida." },
+        "ecommerce": { "title": "E-commerce", "body": "Tiendas que venden. Checkout optimizado, integraciones de pago y logística." },
+        "seo": { "title": "SEO técnico con IA", "body": "Metodología con inteligencia artificial para posicionar tu marca en los primeros resultados." },
+        "automation": { "title": "Automatización IA", "body": "Agentes y flujos inteligentes que ahorran horas a tu equipo cada semana." },
+        "crm": { "title": "Implementación & Desarrollo CRM", "body": "Implementamos HubSpot, Zoho o Pipedrive, o desarrollamos un CRM a medida. Pipelines, automatización comercial y dashboards conectados a tu sitio." },
+        "saas": { "title": "Plataformas SaaS", "body": "Productos empresariales escalables, desde el MVP hasta la operación a gran escala." }
+      },
+      "link": "Ver servicio"
+    },
+    "ai": {
+      "kicker": "Metodología AI",
+      "title": "SEO técnico y automatización potenciados por inteligencia artificial",
+      "body": "Combinamos criterio humano con agentes de IA para investigar, producir y posicionar a una velocidad que el trabajo manual no alcanza.",
+      "bullets": {
+        "keywords": "Investigación de keywords a escala",
+        "content": "Contenido optimizado y auditorías técnicas",
+        "automation": "Flujos de automatización a la medida"
+      }
+    },
+    "terminal": {
+      "deploy": "beleaf deploy --seo --ai",
+      "analyze": "Analizando 1.240 keywords del sector...",
+      "clusters": "Generando clusters de contenido...",
+      "position": "Posición media: #18 → #4 en 90 días",
+      "traffic": "Tráfico orgánico +212%"
+    },
+    "seo": {
+      "title": "Posicionamiento que se sostiene en el tiempo",
+      "lead": "Crecimiento orgánico medible, no humo. Cada decisión se respalda con datos.",
+      "cards": {
+        "01": { "title": "Auditoría técnica", "body": "Core Web Vitals, indexación, estructura y rendimiento. Arreglamos lo que frena tu posicionamiento." },
+        "02": { "title": "Contenido con intención", "body": "Clusters temáticos construidos sobre la intención de búsqueda real de tus clientes." },
+        "03": { "title": "Autoridad y enlaces", "body": "Estrategia de enlazado y autoridad de dominio sostenible, sin trucos que penalizan." }
+      }
+    },
+    "gallery": {
+      "eyebrow": "Trabajo reciente",
+      "title": "Proyectos que mueven la aguja",
+      "hint": "Desliza",
+      "more": "Ver todos los proyectos",
+      "items": {
+        "ortotex": "E-commerce · Shopify",
+        "grassranch": "Sitio corporativo · WordPress",
+        "kreatup": "Plataforma SaaS · Next.js",
+        "cervantes": "Landing + CRM",
+        "coldcare": "E-commerce · SEO internacional",
+        "elevator": "Automatización con IA"
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Clientes",
+      "title": "Resultados que hablan por nosotros",
+      "items": {
+        "ortotex": { "result": "+45% tráfico orgánico en 3 meses", "quote": "El rediseño y el SEO técnico nos sacaron del anonimato. Hoy los distribuidores nos encuentran a nosotros, no al revés." },
+        "grassranch": { "result": "+62% ventas online en 6 meses", "quote": "Pasamos de un catálogo en PDF a una tienda que vende sola. El checkout optimizado se nota en la facturación." },
+        "kreatup": { "result": "2x leads calificados por mes", "quote": "Conectaron el sitio con el CRM y dejamos de perder oportunidades en el correo. Cada lead llega con contexto." },
+        "cervantes": { "result": "+70% citas agendadas online", "quote": "Mis pacientes agendan solos, el recordatorio es automático y mi asistente recuperó media jornada a la semana." },
+        "coldcare": { "result": "8.2% de conversión e-commerce", "quote": "Entendieron un mercado de nicho en inglés y español. La velocidad del sitio y el SEO internacional hicieron el resto." },
+        "elevator": { "result": "−15 h operativas por semana", "quote": "La automatización con IA nos quitó el trabajo repetitivo de reportes. El equipo ahora se dedica a estrategia." }
+      }
+    },
+    "stack": {
+      "kicker": "El stack detrás de cada proyecto",
+      "title": "Tecnología con la que construimos resultados",
+      "lead": "Dominamos las plataformas que tu negocio ya usa — y las que debería usar — para no atarte a una sola herramienta."
+    },
+    "process": {
+      "title": "Cómo trabajamos",
+      "steps": {
+        "01": { "title": "Descubrimiento", "body": "Entendemos tu negocio, tus clientes y tus metas." },
+        "02": { "title": "Estrategia", "body": "Definimos alcance, arquitectura y plan de crecimiento." },
+        "03": { "title": "Diseño", "body": "Prototipos de alta fidelidad alineados a tu marca." },
+        "04": { "title": "Desarrollo", "body": "Código a la medida, rápido y mantenible." },
+        "05": { "title": "Crecimiento", "body": "Medimos, optimizamos y escalamos contigo." }
+      }
+    },
+    "finalCta": {
+      "title": "¿Construimos algo que crezca?",
+      "body": "Cuéntanos qué tienes en mente. Te respondemos en menos de 24 horas hábiles.",
+      "primaryCta": "Cotiza tu proyecto",
+      "secondaryCta": "Agenda una llamada"
+    }
+  },
   "Nav": {
     "ariaMain": "Principal",
     "ariaMenu": "Menú",

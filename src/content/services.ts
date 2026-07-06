@@ -2,6 +2,7 @@ import type { ServiceSummary, SeoPillarCard, StackTool, ProcessStep } from "@/ty
 
 export const SERVICES: ServiceSummary[] = [
   {
+    key: "web",
     icon: "code-2",
     title: "Desarrollo web",
     body: "WordPress, Shopify, Next.js, React y código puro. Sitios rápidos, seguros y a la medida.",
@@ -9,6 +10,7 @@ export const SERVICES: ServiceSummary[] = [
     live: true,
   },
   {
+    key: "ecommerce",
     icon: "shopping-bag",
     title: "E-commerce",
     body: "Tiendas que venden. Checkout optimizado, integraciones de pago y logística.",
@@ -16,6 +18,7 @@ export const SERVICES: ServiceSummary[] = [
     live: true,
   },
   {
+    key: "seo",
     icon: "search",
     title: "SEO técnico con IA",
     body: "Metodología con inteligencia artificial para posicionar tu marca en los primeros resultados.",
@@ -23,6 +26,7 @@ export const SERVICES: ServiceSummary[] = [
     live: true,
   },
   {
+    key: "automation",
     icon: "bot",
     title: "Automatización IA",
     body: "Agentes y flujos inteligentes que ahorran horas a tu equipo cada semana.",
@@ -30,6 +34,7 @@ export const SERVICES: ServiceSummary[] = [
     live: true,
   },
   {
+    key: "crm",
     icon: "git-merge",
     title: "Implementación & Desarrollo CRM",
     body: "Implementamos HubSpot, Zoho o Pipedrive, o desarrollamos un CRM a medida. Pipelines, automatización comercial y dashboards conectados a tu sitio.",
@@ -37,6 +42,7 @@ export const SERVICES: ServiceSummary[] = [
     live: true,
   },
   {
+    key: "saas",
     icon: "layout-dashboard",
     title: "Plataformas SaaS",
     body: "Productos empresariales escalables, desde el MVP hasta la operación a gran escala.",

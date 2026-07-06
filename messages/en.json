@@ -1,4 +1,132 @@
 {
+  "Home": {
+    "hero": {
+      "eyebrow": "Digital agency · Medellín, Colombia",
+      "headline": "We design and build the website your business deserves",
+      "sub": "Custom websites, e-commerce, and platforms. Fast, measurable, and built to grow with you.",
+      "pickLabel": "What do you need to build?",
+      "pickHint": "Select everything that applies",
+      "pills": {
+        "web": "Website",
+        "ecommerce": "E-commerce",
+        "seo": "Technical SEO",
+        "automation": "AI Automation",
+        "crm": "CRM",
+        "saas": "SaaS Platform"
+      },
+      "stats": {
+        "projects": "Projects delivered",
+        "years": "Years building in LATAM",
+        "growth": "Average organic growth",
+        "custom": "Custom-built code"
+      },
+      "yearsSuffix": " years",
+      "bannerK": "Ready for a quote",
+      "bannerCta": "Let's start",
+      "hintPre": "Tap a service to build your project, or",
+      "hintLink": "get a quote directly"
+    },
+    "marquee": {
+      "web": "Web development",
+      "ecommerce": "E-commerce",
+      "seo": "AI-powered technical SEO",
+      "automation": "Automation",
+      "crm": "CRM & automation",
+      "saas": "SaaS platforms",
+      "landing": "Landing pages"
+    },
+    "statement": {
+      "kicker": "Who we are",
+      "title": "We don't sell templates. We build digital products with engineering rigor and a design eye.",
+      "body": "We're a technical-creative team based in Medellín. We work with startups, SMBs, and companies across Latin America that need a serious partner to build and grow their digital presence."
+    },
+    "servicesGrid": {
+      "kicker": "Our services",
+      "title": "Everything your brand needs to grow online",
+      "items": {
+        "web": { "title": "Web Development", "body": "WordPress, Shopify, Next.js, React, and hand-written code. Fast, secure, custom-built sites." },
+        "ecommerce": { "title": "E-commerce", "body": "Stores that sell. Optimized checkout, payment integrations, and logistics." },
+        "seo": { "title": "AI-Powered Technical SEO", "body": "An AI-driven methodology to rank your brand at the top of search results." },
+        "automation": { "title": "AI Automation", "body": "Smart agents and workflows that save your team hours every week." },
+        "crm": { "title": "CRM Implementation & Development", "body": "We implement HubSpot, Zoho, or Pipedrive — or build a custom CRM. Pipelines, sales automation, and dashboards connected to your site." },
+        "saas": { "title": "SaaS Platforms", "body": "Scalable enterprise products, from MVP to large-scale operation." }
+      },
+      "link": "View service"
+    },
+    "ai": {
+      "kicker": "AI Methodology",
+      "title": "Technical SEO and automation powered by artificial intelligence",
+      "body": "We combine human judgment with AI agents to research, produce, and rank at a speed manual work can't match.",
+      "bullets": {
+        "keywords": "Keyword research at scale",
+        "content": "Optimized content and technical audits",
+        "automation": "Custom automation workflows"
+      }
+    },
+    "terminal": {
+      "deploy": "beleaf deploy --seo --ai",
+      "analyze": "Analyzing 1,240 industry keywords...",
+      "clusters": "Generating content clusters...",
+      "position": "Average position: #18 → #4 in 90 days",
+      "traffic": "Organic traffic +212%"
+    },
+    "seo": {
+      "title": "Rankings that last",
+      "lead": "Measurable organic growth, not smoke and mirrors. Every decision is backed by data.",
+      "cards": {
+        "01": { "title": "Technical Audit", "body": "Core Web Vitals, indexing, structure, and performance. We fix what's holding your rankings back." },
+        "02": { "title": "Intent-Driven Content", "body": "Topic clusters built around your customers' real search intent." },
+        "03": { "title": "Authority & Links", "body": "A sustainable link-building and domain authority strategy — no penalty-prone tricks." }
+      }
+    },
+    "gallery": {
+      "eyebrow": "Recent work",
+      "title": "Projects that move the needle",
+      "hint": "Swipe",
+      "more": "View all projects",
+      "items": {
+        "ortotex": "E-commerce · Shopify",
+        "grassranch": "Corporate site · WordPress",
+        "kreatup": "SaaS Platform · Next.js",
+        "cervantes": "Landing page + CRM",
+        "coldcare": "E-commerce · International SEO",
+        "elevator": "AI Automation"
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Clients",
+      "title": "Results that speak for themselves",
+      "items": {
+        "ortotex": { "result": "+45% organic traffic in 3 months", "quote": "The redesign and technical SEO got us out of obscurity. Today distributors find us, not the other way around." },
+        "grassranch": { "result": "+62% online sales in 6 months", "quote": "We went from a PDF catalog to a store that sells itself. The optimized checkout shows up in the revenue." },
+        "kreatup": { "result": "2x qualified leads per month", "quote": "They connected the site to our CRM and we stopped losing opportunities in email. Every lead arrives with context." },
+        "cervantes": { "result": "+70% appointments booked online", "quote": "My patients book on their own, reminders are automatic, and my assistant got half a workday back every week." },
+        "coldcare": { "result": "8.2% e-commerce conversion rate", "quote": "They understood a niche market in English and Spanish. Site speed and international SEO did the rest." },
+        "elevator": { "result": "−15 operational hours per week", "quote": "AI automation took repetitive reporting work off our plate. The team now focuses on strategy." }
+      }
+    },
+    "stack": {
+      "kicker": "The stack behind every project",
+      "title": "Technology we use to build results",
+      "lead": "We master the platforms your business already uses — and the ones it should — so you're never locked into a single tool."
+    },
+    "process": {
+      "title": "How we work",
+      "steps": {
+        "01": { "title": "Discovery", "body": "We get to know your business, your customers, and your goals." },
+        "02": { "title": "Strategy", "body": "We define scope, architecture, and a growth plan." },
+        "03": { "title": "Design", "body": "High-fidelity prototypes aligned to your brand." },
+        "04": { "title": "Development", "body": "Custom code, fast and maintainable." },
+        "05": { "title": "Growth", "body": "We measure, optimize, and scale with you." }
+      }
+    },
+    "finalCta": {
+      "title": "Shall we build something that grows?",
+      "body": "Tell us what you have in mind. We'll reply within 24 business hours.",
+      "primaryCta": "Get a quote",
+      "secondaryCta": "Book a call"
+    }
+  },
   "Nav": {
     "ariaMain": "Main",
     "ariaMenu": "Menu",

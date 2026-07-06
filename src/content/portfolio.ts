@@ -84,10 +84,10 @@ export const PROJECTS: Project[] = [
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { client: "Ortotex", category: "E-commerce · Shopify", navy: true },
-  { client: "Grassranch", category: "Sitio corporativo · WordPress", navy: false },
-  { client: "KreatUp", category: "Plataforma SaaS · Next.js", navy: true },
-  { client: "Dr. Carlos Cervantes", category: "Landing + CRM", navy: false },
-  { client: "Cold Care Recovery", category: "E-commerce · SEO internacional", navy: true },
-  { client: "Elevator Agencia", category: "Automatización con IA", navy: false },
+  { key: "ortotex", client: "Ortotex", category: "E-commerce · Shopify", navy: true },
+  { key: "grassranch", client: "Grassranch", category: "Sitio corporativo · WordPress", navy: false },
+  { key: "kreatup", client: "KreatUp", category: "Plataforma SaaS · Next.js", navy: true },
+  { key: "cervantes", client: "Dr. Carlos Cervantes", category: "Landing + CRM", navy: false },
+  { key: "coldcare", client: "Cold Care Recovery", category: "E-commerce · SEO internacional", navy: true },
+  { key: "elevator", client: "Elevator Agencia", category: "Automatización con IA", navy: false },
 ];

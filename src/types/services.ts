@@ -1,4 +1,5 @@
 export interface ServiceSummary {
+  key: string;
   icon: string;
   title: string;
   body: string;

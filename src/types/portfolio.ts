@@ -8,6 +8,7 @@ export interface Project {
 }
 
 export interface GalleryItem {
+  key: string;
   client: string;
   category: string;
   navy: boolean;
@@ -26,6 +27,7 @@ export interface CaseStudy {
 }
 
 export interface Testimonial {
+  key: string;
   initials: string;
   name: string;
   company: string;
