@@ -6,7 +6,9 @@ export function PortfolioHero() {
     <header className={styles.hero}>
       <div className="hero-grid" />
       <div className={styles.heroInner}>
-        <span className="ds-eyebrow reveal">Portafolio</span>
+        <Reveal as="span" className="ds-eyebrow">
+          Portafolio
+        </Reveal>
         <h1 className={styles.h1}>
           Proyectos que
           <br />

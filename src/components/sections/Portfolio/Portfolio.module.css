@@ -3,7 +3,7 @@
   background: var(--navy);
   color: #fff;
   overflow: hidden;
-  padding: calc(var(--nav-h) + 64px) 0 56px;
+  padding: calc(var(--nav-h) + 56px) 0 72px;
 }
 .heroInner {
   position: relative;
@@ -75,20 +75,28 @@
   background: var(--navy);
   border-color: var(--navy);
 }
+.filterChipOn:hover {
+  color: #fff;
+}
 
 .deck {
-  background: var(--white);
-  padding: 48px 0 var(--section-y);
+  background: var(--off-white);
+  padding: 40px 0 72px;
 }
 .deckInner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+}
+/* Cada .item reserva una pantalla completa de scroll (102vh) para que su
+   .card, sticky dentro de ese alto, tenga espacio de sobra para "pinearse"
+   antes de que el siguiente item empuje el scroll y lo destape. */
+.item {
+  position: relative;
+  height: 102vh;
 }
 .card {
+  position: sticky;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -97,6 +105,9 @@
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: clamp(24px, 3vw, 40px);
+  will-change: transform;
+  transform-origin: 50% 0;
+  box-shadow: 0 -18px 56px rgba(0, 0, 0, 0.42);
 }
 .navy {
   background: var(--navy-mid);
@@ -177,12 +188,26 @@
 }
 
 @media (max-width: 768px) {
+  .item {
+    height: auto;
+    margin-bottom: 18px;
+  }
   .card {
+    position: static;
     grid-template-columns: 1fr;
     gap: 24px;
   }
   .zone {
     order: -1;
     max-height: 40vh;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    height: auto;
+    margin-bottom: 18px;
+  }
+  .card {
+    position: static;
   }
 }
