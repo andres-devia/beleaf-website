@@ -7,6 +7,7 @@ export interface ServiceCatalogCard {
 }
 
 export interface IndustrySector {
+  key: string;
   icon: string;
   name: string;
   desc: string;
@@ -14,6 +15,7 @@ export interface IndustrySector {
 }
 
 export interface EngagementModel {
+  key: string;
   icon: string;
   k: string;
   title: string;

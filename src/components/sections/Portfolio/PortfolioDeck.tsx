@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { PORTFOLIO_CATEGORIES, CASE_STUDIES } from "@/content/portfolio";
 import type { ProjectCategory } from "@/types/portfolio";
@@ -57,6 +58,7 @@ export function PortfolioDeck() {
   const [category, setCategory] = useState<ProjectCategory>("all");
   const list = CASE_STUDIES.filter((p) => category === "all" || p.categoryKey === category);
   const stackRef = useStackDeck(category);
+  const t = useTranslations("Portfolio");
 
   return (
     <>
@@ -70,7 +72,7 @@ export function PortfolioDeck() {
               onClick={() => setCategory(c.key)}
               aria-pressed={category === c.key}
             >
-              {c.label}
+              {t(`categories.${c.key}`)}
             </button>
           ))}
         </div>
@@ -78,27 +80,30 @@ export function PortfolioDeck() {
 
       <section className={styles.deck}>
         <div className={styles.deckInner} ref={stackRef} key={category}>
-          {list.map((project, i) => (
-            <div className={styles.item} key={project.slug}>
-              <article
-                className={`${styles.card} ${project.navy ? styles.navy : ""}`}
-                style={{ top: `calc(var(--nav-h) + ${24 + i * 14}px)` }}
-              >
-                <div>
-                  <span className={styles.n}>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={styles.cat}>
-                    {project.category} · {project.industry}
-                  </span>
-                  <h3 className={styles.title}>{project.title}</h3>
-                  <p className={styles.desc}>{project.desc}</p>
-                  <span className={styles.cta}>
-                    Ver proyecto <ArrowRight size={15} />
-                  </span>
-                </div>
-                <div className={styles.zone}>{project.title}</div>
-              </article>
-            </div>
-          ))}
+          {list.map((project, i) => {
+            const title = t(`deck.cases.${project.slug}.title`);
+            return (
+              <div className={styles.item} key={project.slug}>
+                <article
+                  className={`${styles.card} ${project.navy ? styles.navy : ""}`}
+                  style={{ top: `calc(var(--nav-h) + ${24 + i * 14}px)` }}
+                >
+                  <div>
+                    <span className={styles.n}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={styles.cat}>
+                      {t(`categories.${project.categoryKey}`)} · {t(`deck.cases.${project.slug}.industry`)}
+                    </span>
+                    <h3 className={styles.title}>{title}</h3>
+                    <p className={styles.desc}>{t(`deck.cases.${project.slug}.desc`)}</p>
+                    <span className={styles.cta}>
+                      {t("deck.ctaLabel")} <ArrowRight size={15} />
+                    </span>
+                  </div>
+                  <div className={styles.zone}>{title}</div>
+                </article>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

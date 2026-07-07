@@ -136,7 +136,7 @@
     "services": "Servicios",
     "about": "Nosotros",
     "contact": "Contacto",
-    "portfolio": "Portafolio",
+    "portfolio": "Proyectos",
     "cta": "Cotiza tu proyecto",
     "pillars": {
       "web": { "label": "Desarrollo web a la medida", "short": "Desarrollo web" },
@@ -184,6 +184,251 @@
     "ia": "IA & Automatización",
     "crm": "Implementación CRM",
     "video": "Producción Audiovisual"
+  },
+  "ServicesHub": {
+    "hero": {
+      "eyebrow": "Servicios",
+      "title": "Un equipo, todas las soluciones digitales que tu marca necesita",
+      "sub": "Estrategia, diseño, tecnología y crecimiento bajo un mismo techo. Trabajamos con empresas en Colombia, Latinoamérica y Estados Unidos.",
+      "ctaPrimary": "Cotiza tu proyecto",
+      "ctaSecondary": "Ver portafolio",
+      "stats": {
+        "services": { "n": "8", "l": "servicios integrados" },
+        "sectors": { "n": "6", "l": "sectores atendidos" },
+        "coverage": { "n": "LATAM + US", "l": "cobertura geográfica" }
+      }
+    },
+    "catalog": {
+      "eyebrow": "Catálogo",
+      "title": "¿Qué servicios digitales ofrece beleafdesign?",
+      "sub": "Cada servicio funciona solo o combinado en un ecosistema coordinado. Explora el detalle de cada uno.",
+      "cta": "Cotizar",
+      "cards": {
+        "web": {
+          "name": "Desarrollo Web",
+          "desc": "Sitios, e-commerce y plataformas a la medida, rápidos y escalables.",
+          "incl": ["Diseño UI a la medida", "WordPress, Shopify o a medida", "Integraciones y pagos"]
+        },
+        "seo": {
+          "name": "SEO & Posicionamiento",
+          "desc": "Aparece donde tus clientes ya están buscando.",
+          "incl": ["Auditoría técnica", "Investigación de keywords", "Contenido optimizado"]
+        },
+        "branding": {
+          "name": "Branding & Diseño",
+          "desc": "Identidad visual con criterio y consistencia.",
+          "incl": ["Logo y sistema visual", "Guía de marca", "Papelería y redes"]
+        },
+        "marketing": {
+          "name": "Marketing Digital",
+          "desc": "Contenido y comunidad que construyen marca.",
+          "incl": ["Estrategia de contenido", "Calendario editorial", "Community management"]
+        },
+        "ads": {
+          "name": "Publicidad Digital",
+          "desc": "Pauta que genera leads y ventas medibles.",
+          "incl": ["Meta & Google Ads", "Creativos y copy", "Optimización continua"]
+        },
+        "ia": {
+          "name": "IA & Automatización",
+          "desc": "Automatiza procesos y atención con IA.",
+          "incl": ["Chatbots y agentes", "Flujos internos", "Integración con tu stack"]
+        },
+        "crm": {
+          "name": "Implementación CRM",
+          "desc": "Ordena tu comercial en una sola plataforma.",
+          "incl": ["HubSpot, Zoho, Pipedrive", "Pipelines y automatización", "Migración y capacitación"]
+        },
+        "video": {
+          "name": "Producción Audiovisual",
+          "desc": "Fotografía y video que comunican valor.",
+          "incl": ["Foto de producto", "Video corporativo", "Promocional y drone"]
+        }
+      }
+    },
+    "sectors": {
+      "eyebrow": "Industrias",
+      "title": "Sectores que atendemos",
+      "sub": "Adaptamos estrategia y ejecución al contexto real de cada tipo de negocio.",
+      "items": {
+        "retail": {
+          "name": "Retail & E-commerce",
+          "desc": "Tiendas que venden: catálogos claros, checkout sin fricción y campañas que mueven inventario. Conectamos web, pauta y CRM para que cada visita cuente.",
+          "tags": ["Shopify", "Pagos locales", "Remarketing"]
+        },
+        "health": {
+          "name": "Salud & Bienestar",
+          "desc": "Confianza y agenda llena. Sitios que comunican credibilidad, SEO local para que te encuentren y automatización para gestionar citas y seguimiento.",
+          "tags": ["SEO local", "Agendamiento", "Reputación"]
+        },
+        "agro": {
+          "name": "Agroindustria",
+          "desc": "Llevamos negocios tradicionales al mundo digital sin perder su esencia: presencia profesional, posicionamiento B2B y procesos comerciales ordenados.",
+          "tags": ["B2B", "Catálogo", "CRM"]
+        },
+        "professional": {
+          "name": "Servicios profesionales",
+          "desc": "Autoridad que convierte. Marca sólida, contenido que demuestra expertise y embudos que transforman visitas en clientes calificados.",
+          "tags": ["Branding", "Contenido", "Leads"]
+        },
+        "hospitality": {
+          "name": "Hospitalidad",
+          "desc": "Experiencias que se ven tan bien como se viven. Fotografía y video de alto impacto, redes activas y reservas directas.",
+          "tags": ["Audiovisual", "Redes", "Reservas"]
+        },
+        "agencies": {
+          "name": "Marketing & Agencias",
+          "desc": "Tu equipo extendido. Producción de calidad, desarrollo y automatización white-label para escalar la operación de tu agencia.",
+          "tags": ["White-label", "Desarrollo", "Automatización"]
+        }
+      }
+    },
+    "models": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Elige la forma de trabajo que se ajusta a ti",
+      "sub": "Desde un alcance puntual hasta un ecosistema digital completo — con la misma exigencia de calidad.",
+      "items": {
+        "single": {
+          "title": "Proyecto puntual",
+          "body": "Alcance definido, entrega y cierre. Ideal para un sitio web nuevo, un rebranding o una campaña específica."
+        },
+        "recurring": {
+          "title": "Servicio recurrente",
+          "body": "Retainer mensual para crecimiento sostenido: SEO continuo, gestión de redes, pauta y soporte."
+        },
+        "ecosystem": {
+          "title": "Ecosistema integral",
+          "body": "Varios servicios coordinados como un solo sistema — web + SEO + CRM + automatización. Be-Leaf como tu equipo extendido."
+        }
+      }
+    },
+    "stack": {
+      "eyebrow": "Stack tecnológico",
+      "title": "Las herramientas detrás de cada proyecto",
+      "sub": "Dominamos las plataformas que tu negocio ya usa — y las que debería usar."
+    },
+    "final": {
+      "title": "Ya sabemos cómo estructurar tu proyecto",
+      "body": "Arma tu proyecto en nuestro cotizador interactivo y recibe una propuesta a tu medida en menos de 24 horas hábiles.",
+      "cta": "Cotiza tu proyecto"
+    }
+  },
+  "About": {
+    "hero": {
+      "eyebrow": "Agencia digital · Medellín",
+      "lines": ["Construimos", "desde Medellín", "para Latinoamérica"],
+      "sub": "Un equipo técnico-creativo que diseña, programa y automatiza el crecimiento digital de las empresas de la región.",
+      "image": "Equipo beleafdesign"
+    },
+    "manifesto": {
+      "eyebrow": "Nuestra filosofía",
+      "title": "No hacemos templates. Construimos sistemas.",
+      "paragraphs": [
+        "Cada negocio es distinto, así que cada solución también. Empezamos por entender tu operación, tus clientes y tus metas antes de escribir una sola línea de código.",
+        "Combinamos cuatro disciplinas en un mismo equipo: estrategia, tecnología, diseño y automatización. No las tercerizamos ni las separamos, porque el resultado vive en cómo se conectan.",
+        "Construimos con criterio de ingeniería: rápido, seguro y mantenible. Y medimos todo, porque un sitio bonito que no convierte no le sirve a nadie.",
+        "Ese es el sistema beleaf: producto digital que crece contigo, no que se queda quieto el día del lanzamiento."
+      ],
+      "officeImage": "Oficina beleafdesign",
+      "processImage": "Proceso de trabajo"
+    },
+    "stats": {
+      "delivered": "Proyectos entregados",
+      "years": "Años de experiencia",
+      "clients": "Clientes activos",
+      "industries": "Industrias atendidas"
+    },
+    "team": {
+      "kicker": "El equipo",
+      "title": "Las personas detrás de beleaf",
+      "members": {
+        "camila": { "role": "Directora de Estrategia", "spec": "Estrategia digital y crecimiento" },
+        "andres": { "role": "Lead Developer", "spec": "Next.js, React y arquitectura" },
+        "valentina": { "role": "Diseñadora UX/UI", "spec": "Producto, interfaz y marca" },
+        "julian": { "role": "Especialista SEO & IA", "spec": "SEO técnico y automatización" }
+      }
+    },
+    "values": {
+      "eyebrow": "Diferenciales",
+      "title": "Por qué las empresas eligen beleaf",
+      "items": {
+        "personalization": { "title": "Soluciones personalizadas", "body": "Nada de plantillas: cada proyecto se construye para tu negocio." },
+        "ai": { "title": "IA desde el día uno", "body": "Inteligencia artificial integrada en diseño, contenido y operación." },
+        "performance": { "title": "Enfoque en rendimiento", "body": "Velocidad, Core Web Vitals y código que escala sin frenarte." },
+        "businessFocus": { "title": "Diseño alineado a negocio", "body": "Estética con propósito: cada decisión apunta a un resultado." },
+        "automation": { "title": "Automatización de procesos", "body": "Liberamos a tu equipo de las tareas repetitivas." },
+        "strategy": { "title": "Estrategia y técnica a la vez", "body": "Pensamos el negocio y lo ejecutamos con criterio de ingeniería." }
+      }
+    },
+    "timeline": {
+      "kicker": "Trayectoria",
+      "title": "De Medellín para la región",
+      "milestones": {
+        "2021": { "title": "Nace beleafdesign", "body": "Arrancamos en Medellín con un foco claro: web a la medida." },
+        "2022": { "title": "Primer e-commerce escalable", "body": "Una tienda que multiplicó por 3 las ventas de un cliente." },
+        "2023": { "title": "Expansión a LATAM", "body": "Clientes en varios países de la región." },
+        "2024": { "title": "IA y automatización", "body": "Sumamos agentes de IA y SEO con metodología AI." },
+        "2025": { "title": "+80 proyectos entregados", "body": "Seis industrias, un mismo estándar de calidad." }
+      }
+    }
+  },
+  "Portfolio": {
+    "hero": {
+      "eyebrow": "Portafolio",
+      "titleLine1": "Proyectos que",
+      "titleLine2": "hablan por sí solos",
+      "sub": "Sitios, tiendas y sistemas que mueven números reales.",
+      "intro": "No mostramos plantillas bonitas: mostramos negocios que crecieron con tecnología bien puesta. Cada proyecto nace de una meta medible y termina en algo que el cliente puede operar y escalar."
+    },
+    "categories": {
+      "all": "Todos",
+      "web": "Desarrollo Web",
+      "ecommerce": "E-commerce",
+      "seo": "SEO",
+      "ia": "IA & Automatización",
+      "crm": "CRM",
+      "branding": "Branding"
+    },
+    "deck": {
+      "ctaLabel": "Ver proyecto",
+      "cases": {
+        "tienda-cafe-retail": {
+          "industry": "Retail · Café de origen",
+          "title": "Tienda de café de origen",
+          "desc": "Shopify a la medida con pagos locales y CRM: de venta en finca a pedidos en 12 ciudades."
+        },
+        "agenda-clinica-salud": {
+          "industry": "Salud · Red de clínicas",
+          "title": "Plataforma de agendamiento clínico",
+          "desc": "Agenda, historia clínica y recordatorios automáticos para 4 sedes en un solo flujo."
+        },
+        "agente-ia-whatsapp": {
+          "industry": "Hospitalidad · Hotel boutique",
+          "title": "Agente IA de reservas en WhatsApp",
+          "desc": "Atención 24/7 que cotiza, reserva y registra cada huésped en el CRM del hotel."
+        },
+        "seo-b2b-ortotex": {
+          "industry": "Industrial · Fabricante B2B",
+          "title": "SEO técnico para fabricante B2B",
+          "desc": "Arquitectura nueva, Core Web Vitals en verde y contenido con intención de compra."
+        },
+        "automatizacion-leads-crm": {
+          "industry": "Constructora · Salas de venta",
+          "title": "Pipeline comercial unificado",
+          "desc": "Cada lead de salas de venta con asesor, etapa y origen — cero oportunidades perdidas."
+        },
+        "identidad-cafe-cumbre": {
+          "industry": "Branding · Café de exportación",
+          "title": "Identidad para café de exportación",
+          "desc": "Marca, empaque y sistema visual para pasar de la finca al lineal internacional."
+        },
+        "rediseno-wordpress-pyme": {
+          "industry": "Retail · PYME",
+          "title": "Rediseño WordPress + SEO local",
+          "desc": "Sitio rápido y posicionado en su ciudad, listo para que el equipo lo administre solo."
+        }
+      }
+    }
   },
   "QuoteModal": {
     "eyebrow": "Cotiza tu proyecto",

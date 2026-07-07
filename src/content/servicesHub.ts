@@ -8,9 +8,9 @@ export const HUB_HERO = {
   ctaPrimary: "Cotiza tu proyecto",
   ctaSecondary: "Ver portafolio",
   stats: [
-    { n: "8", l: "servicios integrados" },
-    { n: "6", l: "sectores atendidos" },
-    { n: "LATAM + US", l: "cobertura geográfica" },
+    { key: "services", n: "8", l: "servicios integrados" },
+    { key: "sectors", n: "6", l: "sectores atendidos" },
+    { key: "coverage", n: "LATAM + US", l: "cobertura geográfica" },
   ],
 };
 
@@ -40,12 +40,12 @@ export const HUB_SECTORS_INTRO = {
 };
 
 export const HUB_SECTORS: IndustrySector[] = [
-  { icon: "shopping-bag", name: "Retail & E-commerce", desc: "Tiendas que venden: catálogos claros, checkout sin fricción y campañas que mueven inventario. Conectamos web, pauta y CRM para que cada visita cuente.", tags: ["Shopify", "Pagos locales", "Remarketing"] },
-  { icon: "heart-pulse", name: "Salud & Bienestar", desc: "Confianza y agenda llena. Sitios que comunican credibilidad, SEO local para que te encuentren y automatización para gestionar citas y seguimiento.", tags: ["SEO local", "Agendamiento", "Reputación"] },
-  { icon: "sprout", name: "Agroindustria", desc: "Llevamos negocios tradicionales al mundo digital sin perder su esencia: presencia profesional, posicionamiento B2B y procesos comerciales ordenados.", tags: ["B2B", "Catálogo", "CRM"] },
-  { icon: "briefcase", name: "Servicios profesionales", desc: "Autoridad que convierte. Marca sólida, contenido que demuestra expertise y embudos que transforman visitas en clientes calificados.", tags: ["Branding", "Contenido", "Leads"] },
-  { icon: "utensils", name: "Hospitalidad", desc: "Experiencias que se ven tan bien como se viven. Fotografía y video de alto impacto, redes activas y reservas directas.", tags: ["Audiovisual", "Redes", "Reservas"] },
-  { icon: "megaphone", name: "Marketing & Agencias", desc: "Tu equipo extendido. Producción de calidad, desarrollo y automatización white-label para escalar la operación de tu agencia.", tags: ["White-label", "Desarrollo", "Automatización"] },
+  { key: "retail", icon: "shopping-bag", name: "Retail & E-commerce", desc: "Tiendas que venden: catálogos claros, checkout sin fricción y campañas que mueven inventario. Conectamos web, pauta y CRM para que cada visita cuente.", tags: ["Shopify", "Pagos locales", "Remarketing"] },
+  { key: "health", icon: "heart-pulse", name: "Salud & Bienestar", desc: "Confianza y agenda llena. Sitios que comunican credibilidad, SEO local para que te encuentren y automatización para gestionar citas y seguimiento.", tags: ["SEO local", "Agendamiento", "Reputación"] },
+  { key: "agro", icon: "sprout", name: "Agroindustria", desc: "Llevamos negocios tradicionales al mundo digital sin perder su esencia: presencia profesional, posicionamiento B2B y procesos comerciales ordenados.", tags: ["B2B", "Catálogo", "CRM"] },
+  { key: "professional", icon: "briefcase", name: "Servicios profesionales", desc: "Autoridad que convierte. Marca sólida, contenido que demuestra expertise y embudos que transforman visitas en clientes calificados.", tags: ["Branding", "Contenido", "Leads"] },
+  { key: "hospitality", icon: "utensils", name: "Hospitalidad", desc: "Experiencias que se ven tan bien como se viven. Fotografía y video de alto impacto, redes activas y reservas directas.", tags: ["Audiovisual", "Redes", "Reservas"] },
+  { key: "agencies", icon: "megaphone", name: "Marketing & Agencias", desc: "Tu equipo extendido. Producción de calidad, desarrollo y automatización white-label para escalar la operación de tu agencia.", tags: ["White-label", "Desarrollo", "Automatización"] },
 ];
 
 export const HUB_MODELS_INTRO = {
@@ -55,9 +55,9 @@ export const HUB_MODELS_INTRO = {
 };
 
 export const HUB_MODELS: EngagementModel[] = [
-  { icon: "flag", k: "01", title: "Proyecto puntual", body: "Alcance definido, entrega y cierre. Ideal para un sitio web nuevo, un rebranding o una campaña específica." },
-  { icon: "repeat", k: "02", title: "Servicio recurrente", body: "Retainer mensual para crecimiento sostenido: SEO continuo, gestión de redes, pauta y soporte." },
-  { icon: "layers", k: "03", title: "Ecosistema integral", body: "Varios servicios coordinados como un solo sistema — web + SEO + CRM + automatización. Be-Leaf como tu equipo extendido." },
+  { key: "single", icon: "flag", k: "01", title: "Proyecto puntual", body: "Alcance definido, entrega y cierre. Ideal para un sitio web nuevo, un rebranding o una campaña específica." },
+  { key: "recurring", icon: "repeat", k: "02", title: "Servicio recurrente", body: "Retainer mensual para crecimiento sostenido: SEO continuo, gestión de redes, pauta y soporte." },
+  { key: "ecosystem", icon: "layers", k: "03", title: "Ecosistema integral", body: "Varios servicios coordinados como un solo sistema — web + SEO + CRM + automatización. Be-Leaf como tu equipo extendido." },
 ];
 
 export const HUB_STACK_INTRO = {

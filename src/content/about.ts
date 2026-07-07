@@ -18,26 +18,26 @@ export const MANIFESTO = {
 };
 
 export const ABOUT_STATS = [
-  { value: 80, suffix: "+", label: "Proyectos entregados" },
-  { value: 5, suffix: "+", label: "Años de experiencia" },
-  { value: 40, suffix: "+", label: "Clientes activos" },
-  { value: 6, suffix: "", label: "Industrias atendidas" },
+  { key: "delivered", value: 80, suffix: "+", label: "Proyectos entregados" },
+  { key: "years", value: 5, suffix: "+", label: "Años de experiencia" },
+  { key: "clients", value: 40, suffix: "+", label: "Clientes activos" },
+  { key: "industries", value: 6, suffix: "", label: "Industrias atendidas" },
 ];
 
 export const TEAM: TeamMember[] = [
-  { name: "Camila Restrepo", role: "Directora de Estrategia", spec: "Estrategia digital y crecimiento" },
-  { name: "Andrés Ortiz", role: "Lead Developer", spec: "Next.js, React y arquitectura" },
-  { name: "Valentina Gómez", role: "Diseñadora UX/UI", spec: "Producto, interfaz y marca" },
-  { name: "Julián Henao", role: "Especialista SEO & IA", spec: "SEO técnico y automatización" },
+  { key: "camila", name: "Camila Restrepo", role: "Directora de Estrategia", spec: "Estrategia digital y crecimiento" },
+  { key: "andres", name: "Andrés Ortiz", role: "Lead Developer", spec: "Next.js, React y arquitectura" },
+  { key: "valentina", name: "Valentina Gómez", role: "Diseñadora UX/UI", spec: "Producto, interfaz y marca" },
+  { key: "julian", name: "Julián Henao", role: "Especialista SEO & IA", spec: "SEO técnico y automatización" },
 ];
 
 export const VALUES: CompanyValue[] = [
-  { icon: "puzzle", title: "Soluciones personalizadas", body: "Nada de plantillas: cada proyecto se construye para tu negocio." },
-  { icon: "sparkles", title: "IA desde el día uno", body: "Inteligencia artificial integrada en diseño, contenido y operación." },
-  { icon: "gauge", title: "Enfoque en rendimiento", body: "Velocidad, Core Web Vitals y código que escala sin frenarte." },
-  { icon: "target", title: "Diseño alineado a negocio", body: "Estética con propósito: cada decisión apunta a un resultado." },
-  { icon: "workflow", title: "Automatización de procesos", body: "Liberamos a tu equipo de las tareas repetitivas." },
-  { icon: "compass", title: "Estrategia y técnica a la vez", body: "Pensamos el negocio y lo ejecutamos con criterio de ingeniería." },
+  { key: "personalization", icon: "puzzle", title: "Soluciones personalizadas", body: "Nada de plantillas: cada proyecto se construye para tu negocio." },
+  { key: "ai", icon: "sparkles", title: "IA desde el día uno", body: "Inteligencia artificial integrada en diseño, contenido y operación." },
+  { key: "performance", icon: "gauge", title: "Enfoque en rendimiento", body: "Velocidad, Core Web Vitals y código que escala sin frenarte." },
+  { key: "businessFocus", icon: "target", title: "Diseño alineado a negocio", body: "Estética con propósito: cada decisión apunta a un resultado." },
+  { key: "automation", icon: "workflow", title: "Automatización de procesos", body: "Liberamos a tu equipo de las tareas repetitivas." },
+  { key: "strategy", icon: "compass", title: "Estrategia y técnica a la vez", body: "Pensamos el negocio y lo ejecutamos con criterio de ingeniería." },
 ];
 
 export const MILESTONES: Milestone[] = [

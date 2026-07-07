@@ -1,33 +1,36 @@
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { HUB_HERO } from "@/content/servicesHub";
 import styles from "./ServicesHub.module.css";
 
 export function HubHero() {
+  const t = useTranslations("ServicesHub.hero");
+
   return (
     <header className={styles.hero}>
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
       <div className={styles.heroInner}>
-        <span className="ds-eyebrow">{HUB_HERO.eyebrow}</span>
+        <span className="ds-eyebrow">{t("eyebrow")}</span>
         <h1 className={styles.heroH1}>
-          {HUB_HERO.title}
+          {t("title")}
           <span className="dot-accent">.</span>
         </h1>
-        <p className={styles.heroSub}>{HUB_HERO.sub}</p>
+        <p className={styles.heroSub}>{t("sub")}</p>
         <div className={styles.ctaRow}>
           <Link className="btn btn-primary" href="/contacto">
-            {HUB_HERO.ctaPrimary} <ArrowRight size={16} />
+            {t("ctaPrimary")} <ArrowRight size={16} />
           </Link>
           <Link className="btn btn-on-navy-outline" href="/portafolio">
-            {HUB_HERO.ctaSecondary}
+            {t("ctaSecondary")}
           </Link>
         </div>
         <div className={styles.heroStats}>
           {HUB_HERO.stats.map((s) => (
-            <div key={s.l}>
-              <div className={styles.heroStatN}>{s.n}</div>
-              <div className={styles.heroStatL}>{s.l}</div>
+            <div key={s.key}>
+              <div className={styles.heroStatN}>{t(`stats.${s.key}.n`)}</div>
+              <div className={styles.heroStatL}>{t(`stats.${s.key}.l`)}</div>
             </div>
           ))}
         </div>
